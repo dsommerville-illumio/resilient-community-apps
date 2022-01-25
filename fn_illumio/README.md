@@ -140,7 +140,17 @@ Additional package dependencies may exist for each of these packages:
 * resilient-circuits>=42.0.0
 * illumio>=0.7.2
 
-> The *illumio* python library is provided as a wheel package and distributed as-is within the app integration binary and source releases.  
+> The *illumio* python library is provided as a wheel package and distributed as-is within the app integration binary and source releases under the */lib* subdirectory.  
+
+For app host installations, the Dockerfile in the app distribution will automatically install the *illumio* library from */lib*.  
+
+For integration server installations, the provided *illumio* wheel must be installed before installing the *fn_illumio* package:
+
+```bash
+# from the fn_illumio root
+$ pip install ./lib/illumio*.whl
+$ pip install .
+```
 
 ---
 
