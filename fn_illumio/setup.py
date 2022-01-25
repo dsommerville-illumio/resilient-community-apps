@@ -6,6 +6,9 @@ import os
 import glob
 import ntpath
 
+SRC_DIR = os.path.abspath(os.path.dirname(__file__))
+LIBS_DIR = os.path.join(SRC_DIR, 'lib')
+
 
 def get_module_name(module_path):
     """
@@ -37,7 +40,7 @@ setup(
     long_description="""The Illumio Core security platform provides a micro-segmentation solution that enhances network security and prevents propagation of attacks. The Illumio integration with the IBM SOAR platform allows you to automate actions in Illumio Core through the use of SOAR functions and workflows.""",
     install_requires=[
         "resilient-circuits>=42.0.0",
-        "illumio>=0.7.1"
+        "illumio>=0.7.2"
     ],
     python_requires='>=3.6',
     packages=find_packages(),
