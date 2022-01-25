@@ -15,7 +15,10 @@
 - [Function - Illumio: Provision Objects](#function---illumio-provision-objects)
 - [Function - Illumio: Update Workload Enforcement Mode](#function---illumio-update-workload-enforcement-mode)
 - [Rule - Illumio: Block Port](#rule---illumio-block-port)
+- [Rule - Illumio: Block Selected Port](#rule---illumio-block-selected-port)
 - [Workflow - Illumio: Block Port](#workflow---illumio-block-port)
+- [Workflow - Illumio: Block Selected Port](#workflow---illumio-block-selected-port)
+- [Data Table - Traffic Flows](#data-table---traffic-flows)
 
 ---
 
@@ -1456,9 +1459,29 @@ The workflow requires values for the following form fields attached to the Block
 
 ---
 
+## Rule - Illumio: Block Selected Port  
+
+This rule is used to trigger the [Block Selected Port workflow](#workflow---illumio-block-selected-port) from an Artifact of type **Port**. It can be triggered from the Actions menu of **Port** artifact in the Artifacts tab once it has been added to an incident. The incident can be of any type.  
+
+ ![screenshot: illumio-rule-block-selected-port ](./screenshots/illumio-rule-block-selected-port.png)
+
+ ![screenshot: illumio-block-selected-port-action ](./screenshots/illumio-block-selected-port-action.png)
+
+The Port field is not included in the form fields: the value is instead pulled from the Port Artifact. All remaining fields are identical to the **Block Port** Rule.  
+
+ ![screenshot: illumio-block-selected-port-form-fields ](./screenshots/illumio-block-selected-port-form-fields.png)
+
+---
+
 ## Workflow - Illumio: Block Port  
 
-The Block Port workflow can be used to block incoming traffic to all workloads on a specified port and protocol. This deny rule is configured in the Illumio Policy Compute Engine using an [Enforcement Boundary](https://docs.illumio.com/core/21.2/Content/Guides/security-policy/policy-enforcement/enforcement-boundaries.htm).  
+### API Name
+
+`illumio_block_port`
+
+### Overview
+
+The **Block Port** workflow can be used to block incoming traffic to all workloads on a specified port and protocol. This deny rule is configured in the Illumio Policy Compute Engine using an [Enforcement Boundary](https://docs.illumio.com/core/21.2/Content/Guides/security-policy/policy-enforcement/enforcement-boundaries.htm).  
 
  ![screenshot: illumio-workflow-block-port ](./screenshots/illumio-workflow-block-port.png)
 
@@ -1475,3 +1498,40 @@ A [Ruleset](https://docs.illumio.com/core/21.2/Content/Guides/security-policy/cr
 In all branches, an [Enforcement Boundary](https://docs.illumio.com/core/21.2/Content/Guides/security-policy/policy-enforcement/enforcement-boundaries.htm) is created to deny traffic on the specified port and protocol.  
 
 The second conditional branch checks if the Enforcement Mode should be updated for workloads currently in Visibility Only enforcement. If so, **all** workloads in Visibility Only mode will be changed to Selective enforcement.  
+
+---
+
+## Workflow - Illumio: Block Selected Port  
+
+### API Name
+
+`illumio_block_selected_port`
+
+### Overview
+
+The **Block Selected Port** workflow clones the Block Port workflow and is used with the [Block Selected Port Rule](#rule---illumio-block-selected-port) to trigger from **Port**-type Artifacts. Both workflows have the same functionality outside of where the blocked port value originates.  
+
+---
+
+## Data Table - Traffic Flows  
+
+Data table used to store traffic flow data returned from Explorer traffic analysis queries.  
+
+ ![screenshot: illumio-data-table-traffic-flows ](./screenshots/illumio-data-table-traffic-flows.png)
+
+### API Name
+
+`illumio_traffic_flows`
+
+### Columns
+
+| Field Name | API Name  | Type | Placeholder | Required | Description |
+| ---------- | --------- | ---- | ----------- | -------- | ----------- |
+| Source IP  | `source_ip` | `text` | `127.0.0.1` | `Yes` | Source (consumer) IP address for the traffic flow. |
+| Destination IP | `destination_ip` | `text` | `127.0.0.1` | `Yes` | Destination (provider) IP address for the traffic flow. |
+| Port | `port` | `number` | `8080` | `Yes` | Traffic flow destination port. |
+| Protocol | `protocol` | `select` | `TCP` | `Yes` | Traffic flow protocol. |
+| Flows | `flows` | `number` | `0` | `Yes` | Flow count during detection period. |
+| First Detected | `first_detected` | `text` | `2022-01-01T12:00:00Z` | `Yes` | Timestamp at which the flow was initially detected. |
+| Last Detected | `last_detected` | `text` | `2022-01-01T12:00:00Z` | `Yes` | Timestamp at which the flow was last detected. |
+| Flow Details | `flow_details` | `rich text` | | `No` | Any additional details about the traffic flow. |

@@ -28,6 +28,7 @@
 - [Installation](#installation)
   - [Install](#install)
   - [App Configuration](#app-configuration)
+  - [Custom Layouts](#custom-layouts)
 - [Troubleshooting & Support](#troubleshooting--support)
 ---
 
@@ -137,7 +138,7 @@ The app **does** support a proxy server. Proxy settings can be specified in the 
 Python >= 3.6 is supported.
 Additional package dependencies may exist for each of these packages:  
 * resilient-circuits>=42.0.0
-* illumio>=0.7.1
+* illumio>=0.7.2
 
 > The *illumio* python library is provided as a wheel package and distributed as-is within the app integration binary and source releases.  
 
@@ -171,8 +172,33 @@ illumio_pce_api_secret = <PCE_API_SECRET>
 | **illumio_pce_org_id** | Yes | `1` | *The organization ID to connect to on the Illumio Policy Compute Engine* |
 | **illumio_pce_api_key** | Yes | `api_1a1a2233b45c678d9` | *The Illumio Policy Compute Engine API key username* |
 | **illumio_pce_api_secret** | Yes | `0a1bc2d3ef456789g87654h32i101j234k5l67m898n7o65p43q21r012s3t4u5v` | *The Illumio Policy Compute Engine API key secret* |
-| **http_proxy** | Yes | `http://proxy:80` | *HTTP proxy configuration* |
-| **https_proxy** | Yes | `http://proxy:80` | *HTTPS proxy configuration* |
+| **http_proxy** | No | `http://proxy:80` | *HTTP proxy configuration* |
+| **https_proxy** | No | `http://proxy:80` | *HTTPS proxy configuration* |
+
+### Custom Layouts  
+The provided functions and workflows populate custom Data Tables that require a custom incident layout. To configure a new tab to display the tables, navigate to the **Customization Settings** page from the menu as shown:  
+
+![screenshot: illumio-customization-settings ](./doc/screenshots/illumio-customization-settings.png)
+
+From the Layouts tab (the default), select the **Incident Tabs** menu to bring up the default Incident tab layout.  
+
+![screenshot: illumio-layouts-incident-tabs ](./doc/screenshots/illumio-layouts-incident-tabs.png)
+
+To add a custom tab, click the **+** icon at the end of the tab list. This will bring up a dialog box. Name the tab and click **Add**:
+
+![screenshot: illumio-layouts-add-tab ](./doc/screenshots/illumio-layouts-add-tab.png)
+
+Click the **Save** button to save your changes. Select your new custom tab from the tab list on the left of the screen to edit the layout:  
+
+![screenshot: illumio-layouts-custom-tab ](./doc/screenshots/illumio-layouts-custom-tab.png)
+
+Drag the Data Tables over from the right-hand side to add them to your custom tab layout:  
+
+![screenshot: illumio-layouts-tab-layout ](./doc/screenshots/illumio-layouts-tab-layout.png)
+
+Click the **Save** button to save your changes. The new tab should now appear on each Incident page.  
+
+If needed, you can configure conditions for when the tab will be visible, restricting it to only certain Incidents. This customization is beyond the scope of this document.  
 
 ---
 
