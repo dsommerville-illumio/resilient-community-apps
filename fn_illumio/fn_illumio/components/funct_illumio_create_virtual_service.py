@@ -57,6 +57,6 @@ class FunctionComponent(AppFunctionComponent):
                 virtual_service = pce.create_virtual_service(virtual_service)
                 yield self.status_message("Created virtual service with HREF '{}'".format(virtual_service.href))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while creating virtual service") from e
+            raise IntegrationError("Encountered an error while creating virtual service: {}".format(str(e)))
 
         yield FunctionResult(virtual_service.to_json())

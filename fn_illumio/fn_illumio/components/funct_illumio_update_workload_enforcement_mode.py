@@ -61,7 +61,7 @@ class FunctionComponent(AppFunctionComponent):
             if results['errors']:
                 yield self.status_message("Failed to update enforcement for one or more workloads; see errors for details.")
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while updating workload enforcement modes") from e
+            raise IntegrationError("Encountered an error while updating workload enforcement modes: {}".format(str(e)))
 
         yield self.status_message("Finished updating workload enforcement modes")
         yield FunctionResult(results)

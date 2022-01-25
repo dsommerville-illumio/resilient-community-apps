@@ -65,7 +65,7 @@ class FunctionComponent(AppFunctionComponent):
                 traffic_query=traffic_query
             )
         except IllumioException as e:
-            raise IntegrationError("Encountered an error running traffic query") from e
+            raise IntegrationError("Encountered an error running traffic query: {}".format(str(e)))
 
         yield self.status_message("Finished traffic query, found {} flows".format(len(traffic_flows)))
 

@@ -62,7 +62,7 @@ class FunctionComponent(AppFunctionComponent):
                 yield self.status_message("No workloads passed to create service binding")
                 results = {}
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while creating service bindings") from e
+            raise IntegrationError("Encountered an error while creating service bindings: {}".format(str(e)))
 
         yield self.status_message("Finished service binding creation")
         yield FunctionResult(results)

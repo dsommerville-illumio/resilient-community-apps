@@ -45,6 +45,6 @@ class FunctionComponent(AppFunctionComponent):
                 ruleset = pce.create_ruleset(ruleset=Ruleset(name=ruleset_name))
                 yield self.status_message("Created ruleset with HREF '{}'".format(ruleset.href))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while creating ruleset") from e
+            raise IntegrationError("Encountered an error while creating ruleset: {}".format(str(e)))
 
         yield FunctionResult(ruleset.to_json())

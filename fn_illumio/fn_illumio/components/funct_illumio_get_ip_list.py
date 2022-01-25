@@ -44,6 +44,6 @@ class FunctionComponent(AppFunctionComponent):
             else:
                 yield self.status_message("No IP list found with name '{}'".format(ip_list_name))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while getting IP list") from e
+            raise IntegrationError("Encountered an error while getting IP list: {}".format(str(e)))
 
         yield FunctionResult(results)

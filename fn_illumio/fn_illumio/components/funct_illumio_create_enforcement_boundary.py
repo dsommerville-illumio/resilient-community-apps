@@ -63,5 +63,5 @@ class FunctionComponent(AppFunctionComponent):
                 enforcement_boundary = pce.create_enforcement_boundary(enforcement_boundary=enforcement_boundary)
                 yield self.status_message("Created enforcement_boundary with HREF '{}'".format(enforcement_boundary.href))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while creating enforcement boundary") from e
+            raise IntegrationError("Encountered an error while creating enforcement boundary: {}".format(str(e)))
         yield FunctionResult(enforcement_boundary.to_json())

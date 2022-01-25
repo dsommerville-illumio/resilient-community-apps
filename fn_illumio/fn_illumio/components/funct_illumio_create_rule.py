@@ -55,7 +55,7 @@ class FunctionComponent(AppFunctionComponent):
             rule = pce.create_rule(ruleset_href=fn_inputs.illumio_ruleset_href, rule=rule)
             yield self.status_message("Created rule with HREF '{}'".format(rule.href))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while creating rule") from e
+            raise IntegrationError("Encountered an error while creating rule: {}".format(str(e)))
 
         yield FunctionResult(rule.to_json())
 

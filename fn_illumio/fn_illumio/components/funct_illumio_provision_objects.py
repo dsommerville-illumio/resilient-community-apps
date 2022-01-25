@@ -50,7 +50,7 @@ class FunctionComponent(AppFunctionComponent):
             else:
                 yield self.status_message("No draft objects were passed to provision")
         except IllumioException as e:
-            raise IntegrationError("Encountered an error provisioning objects") from e
+            raise IntegrationError("Encountered an error provisioning objects: {}".format(str(e)))
 
         yield self.status_message("Finished policy object provisioning")
         yield FunctionResult({"provisioned_hrefs": provisioned_hrefs})

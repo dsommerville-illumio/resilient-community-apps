@@ -62,6 +62,6 @@ class FunctionComponent(AppFunctionComponent):
             else:
                 yield self.status_message("No workloads found")
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while getting workloads") from e
+            raise IntegrationError("Encountered an error while getting workloads: {}".format(str(e)))
 
         yield FunctionResult(results)

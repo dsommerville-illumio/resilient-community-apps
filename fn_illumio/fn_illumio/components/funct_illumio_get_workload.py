@@ -42,6 +42,6 @@ class FunctionComponent(AppFunctionComponent):
             else:
                 yield self.status_message("No workload found with HREF '{}'".format(workload_href))
         except IllumioException as e:
-            raise IntegrationError("Encountered an error while getting workload") from e
+            raise IntegrationError("Encountered an error while getting workload: {}".format(str(e)))
 
         yield FunctionResult(results)
