@@ -1,0 +1,66 @@
+{
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "href": "/orgs/1/sec_policy/draft/rule_sets/11110/sec_rules/18665",
+        "created_at": "2022-01-07T16:41:42.244Z",
+        "updated_at": "2022-01-07T16:41:42.255Z",
+        "update_type": "create",
+        "created_by": {
+            "href": "/users/464"
+        },
+        "updated_by": {
+            "href": "/users/464"
+        },
+        "ingress_services": [],
+        "providers": [
+            {
+                "virtual_service": {
+                    "href": "/orgs/1/sec_policy/draft/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2"
+                }
+            }
+        ],
+        "consumers": [
+            {
+                "ip_list": {
+                    "href": "/orgs/1/sec_policy/draft/ip_lists/1334"
+                }
+            }
+        ],
+        "enabled": true,
+        "resolve_labels_as": {
+            "providers": [
+                "virtual_services"
+            ],
+            "consumers": [
+                "workloads"
+            ]
+        },
+        "sec_connect": false,
+        "stateless": false,
+        "machine_auth": false,
+        "unscoped_consumers": false,
+        "network_type": "brn"
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_rule_resolve_consumers_as": [
+            "workloads"
+        ],
+        "illumio_rule_consumers": "/orgs/1/sec_policy/active/ip_lists/1334",
+        "illumio_ruleset_href": "/orgs/1/sec_policy/draft/rule_sets/11110",
+        "illumio_rule_resolve_providers_as": [
+            "virtual_services"
+        ],
+        "illumio_rule_providers": "/orgs/1/sec_policy/active/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 457,
+        "timestamp": "2022-01-07 11:41:42"
+    }
+}

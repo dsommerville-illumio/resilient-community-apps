@@ -1,0 +1,290 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "number"
+        },
+        "success": {
+            "type": "boolean"
+        },
+        "reason": {},
+        "content": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "object",
+                    "properties": {
+                        "href": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "updated_by": {
+                    "type": "object",
+                    "properties": {
+                        "href": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "caps": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "public_ip": {
+                    "type": "string"
+                },
+                "interfaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            },
+                            "cidr_block": {
+                                "type": "integer"
+                            },
+                            "network": {
+                                "type": "object",
+                                "properties": {
+                                    "href": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "network_detection_mode": {
+                                "type": "string"
+                            },
+                            "loopback": {
+                                "type": "boolean"
+                            },
+                            "default_gateway_address": {
+                                "type": "string"
+                            },
+                            "link_state": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "os_id": {
+                    "type": "string"
+                },
+                "os_detail": {
+                    "type": "string"
+                },
+                "online": {
+                    "type": "boolean"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "ignored_interface_names": {
+                    "type": "array"
+                },
+                "containers_inherit_host_policy": {
+                    "type": "boolean"
+                },
+                "blocked_connection_action": {
+                    "type": "string"
+                },
+                "agent": {
+                    "type": "object",
+                    "properties": {
+                        "href": {
+                            "type": "string"
+                        },
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "mode": {
+                                    "type": "string"
+                                },
+                                "log_traffic": {
+                                    "type": "boolean"
+                                },
+                                "security_policy_update_mode": {
+                                    "type": "string"
+                                },
+                                "visibility_level": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "secure_connect": {
+                            "type": "object",
+                            "properties": {
+                                "matching_issuer_name": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "status": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "last_heartbeat_on": {
+                                    "type": "string"
+                                },
+                                "uptime_seconds": {
+                                    "type": "integer"
+                                },
+                                "agent_version": {
+                                    "type": "string"
+                                },
+                                "managed_since": {
+                                    "type": "string"
+                                },
+                                "fw_config_current": {
+                                    "type": "boolean"
+                                },
+                                "firewall_rule_count": {
+                                    "type": "integer"
+                                },
+                                "agent_health_errors": {
+                                    "type": "object",
+                                    "properties": {
+                                        "errors": {
+                                            "type": "array"
+                                        },
+                                        "warnings": {
+                                            "type": "array"
+                                        }
+                                    }
+                                },
+                                "security_policy_sync_state": {
+                                    "type": "string"
+                                },
+                                "security_policy_refresh_at": {
+                                    "type": "string"
+                                },
+                                "security_policy_applied_at": {
+                                    "type": "string"
+                                },
+                                "security_policy_received_at": {
+                                    "type": "string"
+                                },
+                                "uid": {
+                                    "type": "string"
+                                },
+                                "instance_id": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "unpair_allowed": {
+                            "type": "boolean"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "ven": {
+                    "type": "object",
+                    "properties": {
+                        "href": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "enforcement_mode": {
+                    "type": "string"
+                },
+                "visibility_level": {
+                    "type": "string"
+                },
+                "service_provider": {
+                    "type": "string"
+                },
+                "data_center": {
+                    "type": "string"
+                },
+                "data_center_zone": {
+                    "type": "string"
+                },
+                "firewall_coexistence": {
+                    "type": "object",
+                    "properties": {
+                        "illumio_primary": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "raw": {},
+        "inputs": {
+            "type": "object",
+            "properties": {
+                "illumio_workload_enforcement_mode": {
+                    "type": "string"
+                },
+                "illumio_workload_managed": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "package": {
+                    "type": "string"
+                },
+                "package_version": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "execution_time_ms": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

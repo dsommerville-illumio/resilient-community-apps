@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number"
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "reason": {},
+    "content": {
+      "type": "object",
+      "properties": {
+        "traffic_flows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "object",
+                "properties": {
+                  "ip": {
+                    "type": "string"
+                  }
+                }
+              },
+              "dst": {
+                "type": "object",
+                "properties": {
+                  "ip": {
+                    "type": "string"
+                  },
+                  "workload": {
+                    "type": "object",
+                    "properties": {
+                      "href": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "hostname": {
+                        "type": "string"
+                      },
+                      "os_type": {
+                        "type": "string"
+                      },
+                      "labels": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "href": {
+                              "type": "string"
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "service": {
+                "type": "object",
+                "properties": {
+                  "port": {
+                    "type": "integer"
+                  },
+                  "proto": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "num_connections": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string"
+              },
+              "timestamp_range": {
+                "type": "object",
+                "properties": {
+                  "first_detected": {
+                    "type": "string"
+                  },
+                  "last_detected": {
+                    "type": "string"
+                  }
+                }
+              },
+              "dst_bi": {
+                "type": "integer"
+              },
+              "dst_bo": {
+                "type": "integer"
+              },
+              "policy_decision": {
+                "type": "string"
+              },
+              "flow_direction": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "raw": {},
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "illumio_protocol": {
+          "type": "string"
+        },
+        "illumio_traffic_analysis_policy_decisions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "illumio_traffic_analysis_end_time": {
+          "type": "integer"
+        },
+        "illumio_traffic_analysis_start_time": {
+          "type": "integer"
+        },
+        "illumio_port": {
+          "type": "integer"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "package": {
+          "type": "string"
+        },
+        "package_version": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "execution_time_ms": {
+          "type": "integer"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

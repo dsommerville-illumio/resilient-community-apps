@@ -1,0 +1,129 @@
+{
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "traffic_flows": [
+            {
+                "src": {
+                    "ip": "198.204.226.234"
+                },
+                "dst": {
+                    "ip": "10.1.100.43",
+                    "workload": {
+                        "href": "/orgs/1/workloads/9c8b69b9-c741-4689-b8c7-f8ebee0dbee8",
+                        "hostname": "windows-jumpbox-1",
+                        "os_type": "windows",
+                        "labels": [
+                            {
+                                "href": "/orgs/1/labels/15415",
+                                "key": "app",
+                                "value": "A-ADMIN"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15411",
+                                "key": "env",
+                                "value": "E-PROD"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15412",
+                                "key": "loc",
+                                "value": "L-DALLAS"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15416",
+                                "key": "role",
+                                "value": "R-JUMP-SRV"
+                            }
+                        ]
+                    }
+                },
+                "service": {
+                    "port": 3389,
+                    "proto": 6,
+                    "process_name": "svchost.exe",
+                    "windows_service_name": "TermService",
+                    "user_name": "NETWORK SERVICE"
+                },
+                "num_connections": 1,
+                "state": "active",
+                "timestamp_range": {
+                    "first_detected": "2021-12-29T20:38:13Z",
+                    "last_detected": "2021-12-29T20:38:13Z"
+                },
+                "dst_bi": 0,
+                "dst_bo": 0,
+                "policy_decision": "potentially_blocked",
+                "flow_direction": "inbound"
+            },
+            {
+                "src": {
+                    "ip": "27.124.5.118"
+                },
+                "dst": {
+                    "ip": "10.1.100.43",
+                    "workload": {
+                        "href": "/orgs/1/workloads/9c8b69b9-c741-4689-b8c7-f8ebee0dbee8",
+                        "hostname": "windows-jumpbox-1",
+                        "os_type": "windows",
+                        "labels": [
+                            {
+                                "href": "/orgs/1/labels/15415",
+                                "key": "app",
+                                "value": "A-ADMIN"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15411",
+                                "key": "env",
+                                "value": "E-PROD"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15412",
+                                "key": "loc",
+                                "value": "L-DALLAS"
+                            },
+                            {
+                                "href": "/orgs/1/labels/15416",
+                                "key": "role",
+                                "value": "R-JUMP-SRV"
+                            }
+                        ]
+                    }
+                },
+                "service": {
+                    "port": 3389,
+                    "proto": 6,
+                    "process_name": "svchost.exe",
+                    "windows_service_name": "TermService",
+                    "user_name": "NETWORK SERVICE"
+                },
+                "num_connections": 17,
+                "state": "timed out",
+                "timestamp_range": {
+                    "first_detected": "2021-12-25T13:49:29Z",
+                    "last_detected": "2021-12-25T13:49:29Z"
+                },
+                "dst_bi": 0,
+                "dst_bo": 0,
+                "policy_decision": "potentially_blocked",
+                "flow_direction": "inbound"
+            }
+        ]
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_protocol": "TCP",
+        "illumio_traffic_analysis_policy_decisions": ["potentially_blocked", "unknown"],
+        "illumio_traffic_analysis_end_time": 1640926800000,
+        "illumio_traffic_analysis_start_time": 1640322000000,
+        "illumio_port": 3389
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 8923,
+        "timestamp": "2022-01-07 10:23:10"
+    }
+}

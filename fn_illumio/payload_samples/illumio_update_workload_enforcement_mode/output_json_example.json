@@ -1,0 +1,25 @@
+{
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "errors": [],
+        "workloads": [
+            "/orgs/1/workloads/3d14ec61-edaf-452e-b1b9-b7308652c0f6",
+            "/orgs/1/workloads/1fd97272-1497-47b8-95c9-6f530dbe0749"
+        ]
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_enforcement_mode": "selective",
+        "illumio_workload_hrefs": "/orgs/1/workloads/3d14ec61-edaf-452e-b1b9-b7308652c0f6,/orgs/1/workloads/1fd97272-1497-47b8-95c9-6f530dbe0749"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 1107,
+        "timestamp": "2022-01-07 11:17:34"
+    }
+}

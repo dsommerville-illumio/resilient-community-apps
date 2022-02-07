@@ -1,0 +1,22 @@
+{
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "provisioned_hrefs": [
+            "/orgs/1/sec_policy/active/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2"
+        ]
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_policy_object_hrefs": "/orgs/1/sec_policy/draft/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 490,
+        "timestamp": "2022-01-07 10:23:20"
+    }
+}

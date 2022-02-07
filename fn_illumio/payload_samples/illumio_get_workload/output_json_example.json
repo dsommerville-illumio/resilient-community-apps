@@ -1,0 +1,124 @@
+{
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "href": "/orgs/1/workloads/3d14ec61-edaf-452e-b1b9-b7308652c0f6",
+        "created_at": "2021-09-13T16:01:07.735779Z",
+        "updated_at": "2021-12-16T16:47:04.458647Z",
+        "created_by": {
+            "href": "/orgs/1/agents/17456"
+        },
+        "updated_by": {
+            "href": "/orgs/1/agents/17456"
+        },
+        "caps": [
+            "write"
+        ],
+        "hostname": "user-4",
+        "public_ip": "66.124.202.19",
+        "interfaces": [
+            {
+                "name": "eth0",
+                "address": "fe80::402:ffff:feef:5a4d",
+                "cidr_block": 64,
+                "network": {
+                    "href": "/orgs/1/networks/9977853d-639e-4afd-a505-9e0fd419ce06"
+                },
+                "network_detection_mode": "link_local",
+                "loopback": false
+            },
+            {
+                "name": "eth0",
+                "address": "10.1.0.46",
+                "cidr_block": 24,
+                "default_gateway_address": "10.1.0.1",
+                "network": {
+                    "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
+                },
+                "network_detection_mode": "single_private_brn",
+                "loopback": false
+            },
+            {
+                "name": "eth0.public",
+                "address": "66.124.202.19",
+                "cidr_block": 32,
+                "network": {
+                    "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
+                },
+                "network_detection_mode": "manual",
+                "loopback": false
+            }
+        ],
+        "service_provider": "example.com",
+        "data_center": "us-west.example.com",
+        "data_center_zone": "us-west",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+            {
+                "href": "/orgs/1/labels/15420"
+            },
+            {
+                "href": "/orgs/1/labels/15431"
+            },
+            {
+                "href": "/orgs/1/labels/15430"
+            },
+            {
+                "href": "/orgs/1/labels/15411"
+            }
+        ],
+        "agent": {
+            "href": "/orgs/1/agents/17456",
+            "config": {
+                "mode": "illuminated",
+                "log_traffic": false,
+                "visibility_level": "flow_summary"
+            },
+            "status": {
+                "status": "active",
+                "uid": "us-west+i-0ab12cd3e4fg5678h",
+                "instance_id": "i-0ab12cd3e4fg5678h",
+                "last_heartbeat_on": "2022-01-07T16:14:31.378648Z",
+                "uptime_seconds": 10025687,
+                "agent_version": "21.2.0-7831",
+                "managed_since": "2021-09-13T16:01:07.772006Z",
+                "fw_config_current": false,
+                "firewall_rule_count": 0,
+                "security_policy_refresh_at": "2022-01-03T20:54:34.809195Z",
+                "security_policy_applied_at": "2022-01-03T20:54:34.809195Z",
+                "security_policy_received_at": "2022-01-03T20:54:34.809195Z",
+                "agent_health_errors": {
+                    "errors": [],
+                    "warnings": []
+                },
+                "security_policy_sync_state": "syncing"
+            },
+            "unpair_allowed": true,
+            "type": "Host"
+        },
+        "ven": {
+            "href": "/orgs/1/vens/3d14ec61-edaf-452e-b1b9-b7308652c0f6"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_workload_href": "/orgs/1/workloads/3d14ec61-edaf-452e-b1b9-b7308652c0f6"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 486,
+        "timestamp": "2022-01-07 10:27:31"
+    }
+}
