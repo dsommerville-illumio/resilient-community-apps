@@ -30,7 +30,6 @@ def read_license(license_file):
 
 setup(
     name="fn_illumio",
-    display_name="Illumio",
     version="1.0.0",
     license="{}".format(read_license(os.path.join(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'fn_illumio'), 'LICENSE'))),
     author="Illumio",
