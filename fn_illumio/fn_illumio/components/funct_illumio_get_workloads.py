@@ -58,7 +58,7 @@ class FunctionComponent(AppFunctionComponent):
 
             if workloads:
                 yield self.status_message("Found {} workloads".format(len(workloads)))
-                results['workloads'] = [workload.to_json() for workload in workloads]
+                results['workloads'] = [workload.to_json() for workload in workloads if workload]
             else:
                 yield self.status_message("No workloads found")
         except IllumioException as e:

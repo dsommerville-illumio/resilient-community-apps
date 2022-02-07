@@ -256,7 +256,8 @@ None
 
 ### Pre-Processing Script
 ```python
-None
+inputs.illumio_workload_hrefs = ','.join(workflow.properties.workload_hrefs['hrefs'])
+
 ```
 
 ### Post-Processing Script
