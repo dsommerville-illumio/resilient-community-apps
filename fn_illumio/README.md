@@ -25,6 +25,7 @@
   - [Cloud Pak for Security](#cloud-pak-for-security)
   - [Proxy Server](#proxy-server)
   - [Python Environment](#python-environment)
+  - [Performance Considerations](#performance-considerations)
 - [Installation](#installation)
   - [Install](#install)
   - [App Configuration](#app-configuration)
@@ -102,6 +103,7 @@ If deploying to a Resilient platform with an App Host, the requirements are:
 If deploying to a Resilient platform with an integration server, the requirements are:
 * Resilient platform >= `41.0.6783`.
 * The app is in the older integration format (available from the AppExchange as a `zip` file which contains a `tar.gz` file).
+* Integration server is running `python>=3.6`. See the [Python Environment](#python-environment) section below for installation details.
 * Integration server is running `resilient-circuits>=42.0.0`.
 * If using an API key account, make sure the account provides the following minimum permissions:
   | Name | Permissions |
@@ -151,6 +153,12 @@ For integration server installations, the provided *illumio* wheel must be insta
 $ pip install ./lib/illumio*.whl
 $ pip install .
 ```
+
+### Performance Considerations  
+
+Functions that operate on workloads (`illumio_get_workloads`, `illumio_update_workload_enforcement_mode`) may be very slow or cause timeouts for large Illumio Policy Compute Engine instances (10,000+ workloads).  
+
+If performance becomes an issue, consider narrowing workload selection using labels or other workload features.  
 
 ---
 
