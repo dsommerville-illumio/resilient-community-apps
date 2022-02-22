@@ -48,12 +48,9 @@ class FunctionComponent(AppFunctionComponent):
                 illumio_helper = IllumioHelper(self.options)
                 pce = illumio_helper.get_pce_instance()
 
-                while workloads:
-                    update_workloads = workloads[:ILLUMIO_WORKLOADS_BATCH_SIZE]
-                    workloads = workloads[ILLUMIO_WORKLOADS_BATCH_SIZE:]
-                    results = pce.update_workload_enforcement_modes(enforcement_mode, update_workloads)
-                    errors += results['errors']
-                    workload_hrefs += [workload.href for workload in results['workloads']]
+                results = pce.update_workload_enforcement_modes(enforcement_mode, workloads)
+                errors += results['errors']
+                workload_hrefs += [workload.href for workload in results['workloads']]
             else:
                 yield self.status_message("No workload HREFs provided")
 
