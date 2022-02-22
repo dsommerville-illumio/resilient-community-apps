@@ -41,6 +41,7 @@
 | Version | Date | Notes |
 | ------- | ---- | ----- |
 | 1.0.0 | 02/2022 | Initial Release. Block port workflow and related actions |
+| 1.0.1 | 02/2022 | Updates and fixes |
 
 ---
 
