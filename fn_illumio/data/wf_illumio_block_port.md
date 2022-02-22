@@ -95,7 +95,7 @@ traffic_flow_workloads = set()
 stored_rows = 0
 
 for flow in sorted_flows:
-    if 'workload' in flow['dst'] and flow['dst']['workload']['href']:
+    if 'workload' in flow['dst'] and 'href' in flow['dst']['workload']:
         # store traffic flows with the highest flow count returned from the analysis
         if stored_rows < INCIDENT_TABLE_MAX_ROWS:
             add_traffic_flow_table_row(flow)
