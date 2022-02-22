@@ -59,13 +59,24 @@ class TestIllumioGetWorkloads:
         "illumio_workload_enforcement_mode": "selective"
     }
     missing_workload_inputs = {
-        "illumio_workload_data_center_zone": "missing-data-centre",
+        "illumio_workload_data_center_zone": "missing-data-centre"
+    }
+
+    failing_workload_inputs = {
+        "illumio_workload_hostname": '',
+        "illumio_workload_enforcement_mode": {'id': 113, 'name': 'visibility_only'},
+        "illumio_workload_ip_address": '',
+        "illumio_workload_name": '',
+        "illumio_workload_labels": '',
+        "illumio_workload_managed": True,
+        "illumio_workload_online": None
     }
 
     @patch('fn_illumio.components.funct_illumio_get_workloads.IllumioHelper.get_pce_instance', side_effect=mocked_policy_compute_engine)
     @pytest.mark.parametrize("mock_inputs, expected_results", [
         (matching_workload_inputs, mock_results('workloads_matching')),
-        (missing_workload_inputs, [])
+        (missing_workload_inputs, []),
+        (failing_workload_inputs, [])
     ])
     def test_success(self, mock_pce, circuits_app, mock_inputs, expected_results):
         """ Test calling with sample values for the parameters """

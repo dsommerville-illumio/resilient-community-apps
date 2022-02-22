@@ -43,15 +43,19 @@ class FunctionComponent(AppFunctionComponent):
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
-            params = {}
-            for k, v in fn_inputs._asdict().items():
-                param_name = k.split('_', 2)[2]
-                if v is not None:
-                    if type(v) is str:
-                        if v and v.strip():
-                            params[param_name] = v.strip()
-                    else:
-                        params[param_name] = v
+            params = {
+                "ip_address": getattr(fn_inputs, "illumio_workload_ip_address", None),
+                "labels": getattr(fn_inputs, "illumio_workload_labels", None),
+                "data_center_zone": getattr(fn_inputs, "illumio_workload_data_center_zone", None),
+                "data_center": getattr(fn_inputs, "illumio_workload_data_center", None),
+                "name": getattr(fn_inputs, "illumio_workload_name", None),
+                "managed": getattr(fn_inputs, "illumio_workload_managed", None),
+                "hostname": getattr(fn_inputs, "illumio_workload_hostname", None),
+                "online": getattr(fn_inputs, "illumio_workload_online", None),
+                "enforcement_mode": getattr(fn_inputs, "illumio_workload_enforcement_mode", None)
+            }
+            # remove any empty params
+            params = self._parse_params(params)
             yield self.status_message(str(params))
 
             workloads = pce.get_workloads(params=params)
@@ -65,3 +69,19 @@ class FunctionComponent(AppFunctionComponent):
             raise IntegrationError("Encountered an error while getting workloads: {}".format(str(e)))
 
         yield FunctionResult(results)
+
+
+    def _parse_params(self, params: dict) -> dict:
+        # parse parameters to remove nulls, empty strings,
+        # and leading or trailing spaces
+        parsed_params = {}
+        for k, v in params.items():
+            if v is not None:
+                if type(v) is str:
+                    v = v.strip()
+                    if v:
+                        parsed_params[k] = v
+                else:
+                    params[k] = v
+        return parsed_params
+
