@@ -9,7 +9,6 @@ from illumio.exceptions import IllumioException
 from illumio.workloads import Workload
 from illumio.util import EnforcementMode
 
-from fn_illumio.util.constants import ILLUMIO_WORKLOADS_BATCH_SIZE
 from fn_illumio.util.helper import IllumioHelper
 
 PACKAGE_NAME = "fn_illumio"
