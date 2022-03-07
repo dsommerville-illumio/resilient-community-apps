@@ -1,10 +1,10 @@
-# docker build -t ibmresilient/fn_illumio:1.0.0 -t ibmresilient/fn_illumio:latest .
+# docker build -t ibmresilient/fn_illumio:1.0.1 -t ibmresilient/fn_illumio:latest .
 
 # Base image using Red Hat's universal base image (rhel 8) for python
 FROM registry.access.redhat.com/ubi8/python-36:latest
 
 ARG APPLICATION=fn_illumio
-ARG RESILIENT_CIRCUITS_VERSION=42.0.0
+ARG RESILIENT_CIRCUITS_VERSION=43.0.0
 ARG PATH_RESILIENT_CIRCUITS=rescircuits
 
 # Environment variable for any app to check if running in a container
