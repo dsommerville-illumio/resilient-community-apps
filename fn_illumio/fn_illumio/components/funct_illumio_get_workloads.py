@@ -59,12 +59,8 @@ class FunctionComponent(AppFunctionComponent):
             yield self.status_message(str(params))
 
             workloads = pce.get_workloads(params=params)
-
-            if workloads:
-                yield self.status_message("Found {} workloads".format(len(workloads)))
-                results['workloads'] = [workload.to_json() for workload in workloads if workload]
-            else:
-                yield self.status_message("No workloads found")
+            yield self.status_message("Found {} matching workloads".format(len(workloads)))
+            results['workloads'] = [workload.to_json() for workload in workloads if workload]
         except IllumioException as e:
             raise IntegrationError("Encountered an error while getting workloads: {}".format(str(e)))
 
@@ -72,8 +68,9 @@ class FunctionComponent(AppFunctionComponent):
 
 
     def _parse_params(self, params: dict) -> dict:
-        # parse parameters to remove nulls, empty strings,
-        # and leading or trailing spaces
+        """
+        Function: Parse input parameters to remove nulls, empty strings, and leading or trailing spaces.
+        """
         parsed_params = {}
         for k, v in params.items():
             if v is not None:
