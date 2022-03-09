@@ -21,7 +21,7 @@ def snake_to_camel(word):
 
 setup(
     name="fn_illumio",
-    display_name="Illumio",
+    display_name="Illumio Rapid Ransomware Containment",
     version="1.0.1",
     license="""
                                  Apache License
@@ -219,8 +219,8 @@ setup(
     author="Illumio",
     author_email="app-integrations@illumio.com",
     url="illumio.com",
-    description="Illumio Core Integration for IBM SOAR",
-    long_description="""The Illumio Core security platform provides a micro-segmentation solution that enhances network security and prevents propagation of attacks. The Illumio integration with the IBM SOAR platform allows you to automate actions in Illumio Core through the use of SOAR functions and workflows.""",
+    description="Illumio Rapid Ransomware Containment for IBM SOAR",
+    long_description="""The Illumio Core security platform provides a micro-segmentation solution that enhances network security and prevents propagation of attacks. The Illumio integration with the IBM SOAR platform allows you to automate Ransomware containment and mitigation in Illumio Core through the use of SOAR functions and workflows.""",
     install_requires=[
         "resilient-circuits>=42.0.0",
         "illumio>=0.7.2"

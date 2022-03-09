@@ -50,11 +50,11 @@
   Provide a high-level description of the function itself and its remote software or application.
   The text below is parsed from the "description" and "long_description" attributes in the setup.py file
 -->
-**Illumio Core Integration for IBM SOAR**
+**Illumio Rapid Ransomware Containment for IBM SOAR**
 
  ![screenshot: main](./doc/screenshots/main.png)
 
-The [Illumio Core security platform](https://www.illumio.com/products/core) provides a micro-segmentation solution that enhances network security and prevents propagation of attacks. The Illumio integration with the IBM SOAR platform allows you to automate actions in the Illumio Core Policy Compute Engine using SOAR functions and workflows.  
+The [Illumio Core security platform](https://www.illumio.com/products/core) provides a micro-segmentation solution that enhances network security and prevents propagation of attacks. The Illumio integration with the IBM SOAR platform allows you to automate Ransomware containment and mitigation in Illumio Core through the use of SOAR functions and workflows.  
 
 You can find additional documentation for your version of Illumio Core through the [Illumio Support Portal](https://docs.illumio.com/core/21.2/Content/Home.htm).  
 
