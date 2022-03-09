@@ -83,7 +83,7 @@ class TestIllumioGetWorkloads:
         results = call_illumio_get_workloads_function(circuits_app, mock_inputs)
         assert expected_results == results['content']['workloads']
 
-    @patch('fn_illumio.components.funct_illumio_get_workload.IllumioHelper.get_pce_instance', side_effect=IllumioException)
+    @patch('fn_illumio.components.funct_illumio_get_workloads.IllumioHelper.get_pce_instance', side_effect=IllumioException)
     @pytest.mark.parametrize("mock_inputs", [(matching_workload_inputs)])
     def test_thrown_exception(self, mock_pce, circuits_app, mock_inputs):
         with pytest.raises(IntegrationError):

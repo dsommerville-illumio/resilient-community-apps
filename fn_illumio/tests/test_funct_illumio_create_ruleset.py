@@ -66,11 +66,6 @@ class TestIllumioCreateRuleset:
         results = call_illumio_create_ruleset_function(circuits_app, mock_inputs)
         assert expected_results == results['content']
 
-    @patch('fn_illumio.components.funct_illumio_create_ruleset.IllumioHelper.get_pce_instance', side_effect=mocked_policy_compute_engine)
-    def test_invalid_inputs(self, mock_pce, circuits_app):
-        with pytest.raises(AttributeError):
-            call_illumio_create_ruleset_function(circuits_app, {})
-
     @patch('fn_illumio.components.funct_illumio_create_ruleset.IllumioHelper.get_pce_instance', side_effect=IllumioException)
     @pytest.mark.parametrize("mock_inputs", [(existing_ruleset_inputs)])
     def test_thrown_exception(self, mock_pce, circuits_app, mock_inputs):
