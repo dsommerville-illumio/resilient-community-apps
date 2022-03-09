@@ -54,8 +54,8 @@ class TestIllumioGetIpList:
         func = get_function_definition(PACKAGE_NAME, FUNCTION_NAME)
         assert func is not None
 
-    existing_ip_list_inputs = {"illumio_ip_list_name": "Any (0.0.0.0/0 and ::/0)"}
-    missing_ip_list_inputs = {"illumio_ip_list_name": "missing IP list"}
+    existing_ip_list_inputs = {"illumio_ip_list_href": "/orgs/1/sec_policy/active/ip_lists/1"}
+    missing_ip_list_inputs = {"illumio_ip_list_href": "/orgs/1/sec_policy/active/ip_lists/2"}
 
     @patch('fn_illumio.components.funct_illumio_get_ip_list.IllumioHelper.get_pce_instance', side_effect=mocked_policy_compute_engine)
     @pytest.mark.parametrize("mock_inputs, expected_results", [

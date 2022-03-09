@@ -22,13 +22,13 @@ class FunctionComponent(AppFunctionComponent):
     @app_function(FN_NAME)
     def _app_function(self, fn_inputs):
         """
-        Function: Get an IP List object by name.
+        Function: Get an IP List object by HREF.
         Inputs:
-            -   fn_inputs.illumio_ip_list_name
+            -   fn_inputs.illumio_ip_list_href
         """
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
-        ip_list_name = fn_inputs.illumio_ip_list_name.strip()
+        ip_list_href = fn_inputs.illumio_ip_list_href.strip()
 
         results = {}
 
@@ -36,13 +36,11 @@ class FunctionComponent(AppFunctionComponent):
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
-            ip_lists = pce.get_ip_lists_by_name(ip_list_name)
-            if ip_lists:
-                ip_list = ip_lists[0]
-                yield self.status_message("Found IP list with HREF '{}'".format(ip_list.href))
+            ip_list = pce.get_ip_list(ip_list_href)
+            if ip_list:
                 results = ip_list.to_json()
             else:
-                yield self.status_message("No IP list found with name '{}'".format(ip_list_name))
+                yield self.status_message("No IP list found with HREF '{}'".format(ip_list_href))
         except IllumioException as e:
             raise IntegrationError("Encountered an error while getting IP list: {}".format(str(e)))
 
