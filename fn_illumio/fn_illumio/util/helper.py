@@ -29,3 +29,18 @@ class IllumioHelper:
         if 'https_proxy' in self.app_config:
             proxies['https_proxy'] = self.app_config.get('https_proxy', '')
         return proxies
+
+    def parse_params(self, params: dict) -> dict:
+        """
+        Parse input parameters to remove nulls, empty strings, and leading or trailing spaces.
+        """
+        parsed_params = {}
+        for k, v in params.items():
+            if v is not None:
+                if type(v) is str:
+                    v = v.strip()
+                    if v:
+                        parsed_params[k] = v
+                else:
+                    params[k] = v
+        return parsed_params
