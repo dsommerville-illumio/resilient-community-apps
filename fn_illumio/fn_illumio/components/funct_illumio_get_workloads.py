@@ -33,6 +33,7 @@ class FunctionComponent(AppFunctionComponent):
             -   fn_inputs.illumio_workload_hostname
             -   fn_inputs.illumio_workload_online
             -   fn_inputs.illumio_workload_enforcement_mode
+            -   fn_inputs.illumio_max_results
         """
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
@@ -52,10 +53,11 @@ class FunctionComponent(AppFunctionComponent):
                 "managed": getattr(fn_inputs, "illumio_workload_managed", None),
                 "hostname": getattr(fn_inputs, "illumio_workload_hostname", None),
                 "online": getattr(fn_inputs, "illumio_workload_online", None),
-                "enforcement_mode": getattr(fn_inputs, "illumio_workload_enforcement_mode", None)
+                "enforcement_mode": getattr(fn_inputs, "illumio_workload_enforcement_mode", None),
+                "max_results": getattr(fn_inputs, "illumio_max_results", None)
             }
             # remove any empty params
-            params = self._parse_params(params)
+            params = illumio_helper.parse_params(params)
             yield self.status_message(str(params))
 
             workloads = pce.get_workloads(params=params)
@@ -65,20 +67,3 @@ class FunctionComponent(AppFunctionComponent):
             raise IntegrationError("Encountered an error while getting workloads: {}".format(str(e)))
 
         yield FunctionResult(results)
-
-
-    def _parse_params(self, params: dict) -> dict:
-        """
-        Function: Parse input parameters to remove nulls, empty strings, and leading or trailing spaces.
-        """
-        parsed_params = {}
-        for k, v in params.items():
-            if v is not None:
-                if type(v) is str:
-                    v = v.strip()
-                    if v:
-                        parsed_params[k] = v
-                else:
-                    params[k] = v
-        return parsed_params
-
