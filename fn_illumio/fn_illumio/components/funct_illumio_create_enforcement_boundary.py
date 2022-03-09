@@ -14,6 +14,8 @@ from fn_illumio.util.helper import IllumioHelper
 PACKAGE_NAME = "fn_illumio"
 FN_NAME = "illumio_create_enforcement_boundary"
 
+DEFAULT_ENFORCEMENT_BOUNDARY_NAME = "EB-IBM-SOAR"
+
 
 class FunctionComponent(AppFunctionComponent):
     """Component that implements function 'illumio_create_enforcement_boundary'"""
@@ -26,11 +28,11 @@ class FunctionComponent(AppFunctionComponent):
         """
         Function: Create an enforcement boundary with an ingress service using the given port/protocol.
         Inputs:
-            -   fn_inputs.illumio_protocol
             -   fn_inputs.illumio_enforcement_boundary_name
             -   fn_inputs.illumio_enforcement_boundary_consumers
             -   fn_inputs.illumio_enforcement_boundary_providers
             -   fn_inputs.illumio_port
+            -   fn_inputs.illumio_protocol
         """
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
@@ -39,26 +41,27 @@ class FunctionComponent(AppFunctionComponent):
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
-            enforcement_boundary_name = fn_inputs.illumio_enforcement_boundary_name
+            enforcement_boundary_name = getattr(fn_inputs, "illumio_enforcement_boundary_name", DEFAULT_ENFORCEMENT_BOUNDARY_NAME)
             consumers = fn_inputs.illumio_enforcement_boundary_consumers.split(',')
             providers = fn_inputs.illumio_enforcement_boundary_providers.split(',')
+            port = fn_inputs.illumio_port
+            protocol = convert_protocol(fn_inputs.illumio_protocol)
 
-            enforcement_boundaries = pce.get_enforcement_boundaries_by_name(enforcement_boundary_name)
-            if enforcement_boundaries:
-                enforcement_boundary = enforcement_boundaries[0]
-                yield self.status_message("Found existing enforcement boundary with name '{}'".format(enforcement_boundary.name))
-            else:
-                yield self.status_message("No existing enforcement boundary exists with name '{}', creating...".format(enforcement_boundary_name))
+            found_existing_enforcement_boundary = False
+            matching_enforcement_boundaries = pce.get_enforcement_boundaries(params={'name': enforcement_boundary_name})
+
+            for enforcement_boundary in matching_enforcement_boundaries:
+                if enforcement_boundary.name == enforcement_boundary_name:
+                    found_existing_enforcement_boundary = True
+                    yield self.status_message("Found existing enforcement boundary with name '{}'".format(enforcement_boundary_name))
+
+            if not found_existing_enforcement_boundary:
+                yield self.status_message("No existing enforcement boundary with name '{}', creating...".format(enforcement_boundary_name))
                 enforcement_boundary = EnforcementBoundary.build(
                     name=enforcement_boundary_name,
                     consumers=consumers,
                     providers=providers,
-                    ingress_services=[
-                        {
-                            'port': fn_inputs.illumio_port,
-                            'proto': convert_protocol(fn_inputs.illumio_protocol)
-                        }
-                    ]
+                    ingress_services=[{'port': port, 'proto': protocol}]
                 )
                 enforcement_boundary = pce.create_enforcement_boundary(enforcement_boundary=enforcement_boundary)
                 yield self.status_message("Created enforcement_boundary with HREF '{}'".format(enforcement_boundary.href))

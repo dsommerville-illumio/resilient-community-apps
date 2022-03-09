@@ -14,6 +14,8 @@ from fn_illumio.util.helper import IllumioHelper
 PACKAGE_NAME = "fn_illumio"
 FN_NAME = "illumio_create_virtual_service"
 
+DEFAULT_VIRTUAL_SERVICE_NAME = "VS-IBM-SOAR"
+
 
 class FunctionComponent(AppFunctionComponent):
     """Component that implements function 'illumio_create_virtual_service'"""
@@ -37,14 +39,18 @@ class FunctionComponent(AppFunctionComponent):
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
-            virtual_service_name = fn_inputs.illumio_virtual_service_name
+            virtual_service_name = getattr(fn_inputs, "illumio_virtual_service_name", DEFAULT_VIRTUAL_SERVICE_NAME)
 
-            services = pce.get_virtual_services_by_name(virtual_service_name)
-            if services:
-                virtual_service = services[0]
-                yield self.status_message("Found existing virtual service with name '{}'".format(virtual_service_name))
-            else:
-                yield self.status_message("No existing virtual service exists with name '{}', creating...".format(virtual_service_name))
+            found_existing_virtual_service = False
+            matching_virtual_services = pce.get_virtual_services(params={'name': virtual_service_name})
+
+            for virtual_service in matching_virtual_services:
+                if virtual_service.name == virtual_service_name:
+                    found_existing_virtual_service = True
+                    yield self.status_message("Found existing virtual service with name '{}'".format(virtual_service_name))
+
+            if not found_existing_virtual_service:
+                yield self.status_message("No existing virtual service with name '{}', creating...".format(virtual_service_name))
                 virtual_service = VirtualService(
                     name=virtual_service_name,
                     service_ports=[
