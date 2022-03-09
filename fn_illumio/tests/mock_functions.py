@@ -1397,16 +1397,51 @@ def mock_results(op):
 
 def mocked_policy_compute_engine(*args, **kwargs):
     class MockResponse:
+        def _find_matching_objects(self, params: dict, mock):
+            objects = []
+            for o in mock:
+                matches = True
+                for k, v in params.items():
+                    if isinstance(o[k], str):
+                        # support partial matches for string values
+                        if o[k] not in v:
+                            matches = False
+                    elif o[k] != v:
+                        matches = False
+                if matches:
+                    objects.append(o)
+            return objects
+
+        def get_enforcement_boundaries(self, params: dict, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params=params,
+                mock=mock_results('list_enforcement_boundaries')
+            )
+            return [EnforcementBoundary.from_json(o) for o in matching_results]
+
         def get_enforcement_boundaries_by_name(self, name: str, *args, **kwargs):
-            matching_results = list(filter(lambda x: x['name'].startswith(name), mock_results('list_enforcement_boundaries')))
+            matching_results = self._find_matching_objects(
+                params={'name': name},
+                mock=mock_results('list_enforcement_boundaries')
+            )
             return [EnforcementBoundary.from_json(o) for o in matching_results]
 
         def create_enforcement_boundary(self, enforcement_boundary: EnforcementBoundary, *args, **kwargs):
             metadata = enforcement_boundary.to_json()
             return EnforcementBoundary.from_json({**metadata, **mock_results('create_enforcement_boundary')})
 
+        def get_rulesets(self, params: dict, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params=params,
+                mock=mock_results('list_rulesets')
+            )
+            return [Ruleset.from_json(o) for o in matching_results]
+
         def get_rulesets_by_name(self, name: str, *args, **kwargs):
-            matching_results = list(filter(lambda x: x['name'].startswith(name), mock_results('list_rulesets')))
+            matching_results = self._find_matching_objects(
+                params={'name': name},
+                mock=mock_results('list_rulesets')
+            )
             return [Ruleset.from_json(o) for o in matching_results]
 
         def create_ruleset(self, ruleset: Ruleset, *args, **kwargs):
@@ -1436,36 +1471,62 @@ def mocked_policy_compute_engine(*args, **kwargs):
                     return True
             return False
 
+        def get_virtual_services(self, params: dict, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params=params,
+                mock=mock_results('list_virtual_services')
+            )
+            return [VirtualService.from_json(o) for o in matching_results]
+
         def get_virtual_services_by_name(self, name: str, *args, **kwargs):
-            matching_results = list(filter(lambda x: x['name'].startswith(name), mock_results('list_virtual_services')))
+            matching_results = self._find_matching_objects(
+                params={'name': name},
+                mock=mock_results('list_virtual_services')
+            )
             return [VirtualService.from_json(o) for o in matching_results]
 
         def create_virtual_service(self, virtual_service: VirtualService, *args, **kwargs):
             metadata = virtual_service.to_json()
             return VirtualService.from_json({**metadata, **mock_results('create_virtual_service')})
 
-        def get_ip_lists_by_name(self, name: str, *args, **kwargs):
-            matching_results = list(filter(lambda x: x['name'].startswith(name), mock_results('list_ip_lists')))
+        def get_ip_list(self, href: str, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params={'href': href},
+                mock=mock_results('list_ip_lists')
+            )
+            return IPList.from_json(matching_results[0] if matching_results else {})
+
+        def get_ip_lists(self, params: dict, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params=params,
+                mock=mock_results('list_ip_lists')
+            )
             return [IPList.from_json(o) for o in matching_results]
 
+        def get_ip_lists_by_name(self, name: str, *args, **kwargs):
+            matching_results = self._find_matching_objects(
+                params={'name': name},
+                mock=mock_results('list_ip_lists')
+            )
+            return [IPList.from_json(o) for o in matching_results]
+
+        def create_ip_list(self, ip_list: IPList, *args, **kwargs):
+            metadata = ip_list.to_json()
+            return IPList.from_json({**metadata, **mock_results('create_ip_list')})
+
         def get_workload(self, workload_href: str, *args, **kwargs):
-            matching_results = self._find_matching_workloads({'href': workload_href})
+            matching_results = self._find_matching_objects(
+                params={'href': workload_href},
+                mock=mock_results('list_workloads')
+            )
             return Workload.from_json(matching_results[0] if matching_results else {})
 
         def get_workloads(self, params: dict, *args, **kwargs):
-            matching_results = self._find_matching_workloads(params)
+            matching_results = self._find_matching_objects(
+                params=params,
+                mock=mock_results('list_workloads')
+            )
             return [Workload.from_json(o) for o in matching_results]
-
-        def _find_matching_workloads(self, params: dict):
-            workloads = []
-            for workload in mock_results('list_workloads'):
-                matches = True
-                for k, v in params.items():
-                    if workload[k] != v:
-                        matches = False
-                if matches:
-                    workloads.append(workload)
-            return workloads
 
         def provision_policy_changes(self, change_description: str, hrefs: List, *args, **kwargs):
             pass  # noop
