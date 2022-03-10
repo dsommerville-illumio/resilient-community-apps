@@ -82,7 +82,7 @@ def add_traffic_flow_table_row(flow):
     row['flows'] = flow['num_connections']
     row['first_detected'] = flow['timestamp_range']['first_detected']
     row['last_detected'] = flow['timestamp_range']['last_detected']
-    detail_string = "Valid network traffic found by Block Port workflow."
+    detail_string = "Network traffic found by Block Selected Port workflow."
     service_details = service_details_to_string(flow['service'])
     if service_details:
         detail_string += "<br/><br/>Service details: {0}".format(service_details)
