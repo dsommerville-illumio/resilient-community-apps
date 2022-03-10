@@ -210,7 +210,7 @@ None
 inputs.illumio_port = int(artifact.value)
 inputs.illumio_protocol = rule.properties.illumio_protocol
 inputs.illumio_enforcement_boundary_name = "EB-IBM-SOAR-{0}-{1}".format(str(artifact.value), rule.properties.illumio_protocol)
-inputs.illumio_enforcement_boundary_consumers = workflow.properties.any_ip_list.content['href']
+inputs.illumio_enforcement_boundary_consumers = workflow.properties.any_ip_list['href']
 ```
 
 ### Post-Processing Script
@@ -263,7 +263,7 @@ incident.addNote(
 ### Pre-Processing Script
 ```python
 inputs.illumio_ruleset_href = workflow.properties.ruleset.content['href']
-inputs.illumio_rule_consumers = workflow.properties.any_ip_list.content['href']
+inputs.illumio_rule_consumers = workflow.properties.any_ip_list['href']
 inputs.illumio_rule_providers = workflow.properties.virtual_service_active_href['href']
 ```
 
