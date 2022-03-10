@@ -194,29 +194,6 @@ None
 
 ---
 
-## Function - Illumio: Get IP List
-
-### API Name
-`illumio_get_ip_list`
-
-### Output Name
-`any_ip_list`
-
-### Message Destination
-`illumio_message_queue`
-
-### Pre-Processing Script
-```python
-None
-```
-
-### Post-Processing Script
-```python
-None
-```
-
----
-
 ## Function - Illumio: Create Enforcement Boundary
 
 ### API Name
@@ -389,6 +366,30 @@ incident.addNote(
         )
     )
 )
+```
+
+---
+
+## Function - Illumio: Get IP Lists
+
+### API Name
+`illumio_get_ip_lists`
+
+### Output Name
+`None`
+
+### Message Destination
+`illumio_message_queue`
+
+### Pre-Processing Script
+```python
+None
+```
+
+### Post-Processing Script
+```python
+workflow.addProperty('any_ip_list', results.content['ip_lists'][0])
+
 ```
 
 ---
