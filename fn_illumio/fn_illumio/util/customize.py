@@ -21,7 +21,7 @@ def codegen_reload_data():
     return {
         "package": u"fn_illumio",
         "message_destinations": [u"illumio_message_queue"],
-        "functions": [u"illumio_create_enforcement_boundary", u"illumio_create_rule", u"illumio_create_ruleset", u"illumio_create_service_binding", u"illumio_create_virtual_service", u"illumio_get_ip_list", u"illumio_get_workload", u"illumio_get_workloads", u"illumio_provision_objects", u"illumio_run_traffic_analysis", u"illumio_update_workload_enforcement_mode"],
+        "functions": [u"illumio_create_enforcement_boundary", u"illumio_create_ip_list", u"illumio_create_rule", u"illumio_create_ruleset", u"illumio_create_service_binding", u"illumio_create_virtual_service", u"illumio_get_ip_list", u"illumio_get_ip_lists", u"illumio_get_workload", u"illumio_get_workloads", u"illumio_provision_objects", u"illumio_run_traffic_analysis", u"illumio_update_workload_enforcement_mode"],
         "workflows": [u"illumio_block_port", u"illumio_block_selected_port"],
         "actions": [u"Illumio: Block Port", u"Illumio: Block Selected Port"],
         "incident_fields": [],
@@ -45,11 +45,13 @@ def customization_data(client=None):
         - illumio_message_queue
     - Functions:
         - illumio_create_enforcement_boundary
+        - illumio_create_ip_list
         - illumio_create_rule
         - illumio_create_ruleset
         - illumio_create_service_binding
         - illumio_create_virtual_service
         - illumio_get_ip_list
+        - illumio_get_ip_lists
         - illumio_get_workload
         - illumio_get_workloads
         - illumio_provision_objects
