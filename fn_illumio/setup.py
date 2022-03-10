@@ -22,7 +22,7 @@ def snake_to_camel(word):
 setup(
     name="fn_illumio",
     display_name="Illumio Rapid Ransomware Containment",
-    version="1.0.1",
+    version="1.1.0",
     license="""
                                  Apache License
                            Version 2.0, January 2004

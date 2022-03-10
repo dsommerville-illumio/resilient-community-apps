@@ -42,6 +42,7 @@
 | ------- | ---- | ----- |
 | 1.0.0 | 02/2022 | Initial Release. Block port workflow and related actions |
 | 1.0.1 | 02/2022 | Updates and fixes |
+| 1.1.0 | 03/2022 | Add get_ip_lists and create_ip_list functions, update illumio REST client library to 0.8.2 |
 
 ---
 
@@ -68,12 +69,15 @@ You can find additional documentation for your version of Illumio Core through t
 The following functions are currently implemented:  
 
 * Create an Enforcement Boundary
+* Create an IP List
 * Create a Rule Set
     * Create a Rule
 * Create a Virtual Service
     * Bind Workloads to a Virtual Service
-* Get an IP List by name
-* Get one or more Workloads
+* Get a collection of IP Lists
+* Get an IP List by HREF
+* Get a collection of Workloads
+* Get a Workload by HREF
 * Provision policy objects
 * Run a traffic analysis query
 * Update the enforcement modes of one or more Workloads
