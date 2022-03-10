@@ -71,7 +71,7 @@ class FunctionComponent(AppFunctionComponent):
         ip_ranges = [ip_range.strip() for ip_range in ip_range_string.split(',')]
         parsed_ip_ranges = []
         for ip_range in ip_ranges:
-            if '-' in from_ip:
+            if '-' in ip_range:
                 from_ip, to_ip = ip_range.split('-')
             else:
                 from_ip = ip_range
