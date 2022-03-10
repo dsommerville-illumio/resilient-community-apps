@@ -1,32 +1,26 @@
 {
-    "version": 2.0,
-    "success": true,
-    "reason": null,
-    "content": {
-        "service_bindings": [
-            {
-                "href": "/orgs/1/service_bindings/c7098f30-8460-4873-a06c-8df87dc1ba1d"
-            },
-            {
-                "href": "/orgs/1/service_bindings/ef302a43-0e59-4288-a4aa-1196369d1f29"
-            },
-            {
-                "href": "/orgs/1/service_bindings/0fe5b79a-0b0d-4281-89db-d8a7867aaf61"
-            }
-        ],
-        "errors": []
-    },
-    "raw": null,
-    "inputs": {
-        "illumio_workload_hrefs": "/orgs/1/workloads/32e366cc-bd18-44aa-a637-9a6e761e268e,/orgs/1/workloads/c733e8b0-fbc8-4764-b313-1655072c65df,/orgs/1/workloads/9c8b69b9-c741-4689-b8c7-f8ebee0dbee8",
-        "illumio_virtual_service_href": "/orgs/1/sec_policy/active/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2"
-    },
-    "metrics": {
-        "version": "1.0",
-        "package": "fn-illumio",
-        "package_version": "1.0.0",
-        "host": "C02G82JEMD6R",
-        "execution_time_ms": 469,
-        "timestamp": "2022-01-07 10:23:22"
-    }
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "service_bindings": [
+      {
+        "href": "/orgs/28/service_bindings/217b353f-6cfb-4359-af0b-5a43ad978a4f"
+      }
+    ],
+    "errors": []
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_workload_hrefs": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+    "illumio_virtual_service_href": "/orgs/28/sec_policy/active/virtual_services/0447a982-ba9d-462d-bfc7-29bdac3627c3"
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 545,
+    "timestamp": "2022-03-09 23:58:17"
+  }
 }

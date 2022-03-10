@@ -13,10 +13,7 @@
       "type": "object",
       "properties": {
         "provisioned_hrefs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "array"
         }
       }
     },

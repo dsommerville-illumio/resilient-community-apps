@@ -15,6 +15,12 @@
         "href": {
           "type": "string"
         },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
         "created_at": {
           "type": "string"
         },
@@ -40,78 +46,33 @@
             }
           }
         },
-        "ingress_services": {
-          "type": "array"
-        },
-        "providers": {
+        "ip_ranges": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "virtual_service": {
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "consumers": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "ip_list": {
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "enabled": {
-          "type": "boolean"
-        },
-        "resolve_labels_as": {
-          "type": "object",
-          "properties": {
-            "providers": {
-              "type": "array",
-              "items": {
+              "from_ip": {
                 "type": "string"
-              }
-            },
-            "consumers": {
-              "type": "array",
-              "items": {
+              },
+              "exclusion": {
+                "type": "boolean"
+              },
+              "to_ip": {
                 "type": "string"
               }
             }
           }
         },
-        "sec_connect": {
-          "type": "boolean"
-        },
-        "stateless": {
-          "type": "boolean"
-        },
-        "machine_auth": {
-          "type": "boolean"
-        },
-        "consuming_security_principals": {
-          "type": "array"
-        },
-        "unscoped_consumers": {
-          "type": "boolean"
-        },
-        "network_type": {
-          "type": "string"
+        "fqdns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fqdn": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
@@ -119,25 +80,16 @@
     "inputs": {
       "type": "object",
       "properties": {
-        "illumio_rule_resolve_consumers_as": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "illumio_rule_consumers": {
+        "illumio_ip_list_ip_ranges": {
           "type": "string"
         },
-        "illumio_ruleset_href": {
+        "illumio_ip_list_name": {
           "type": "string"
         },
-        "illumio_rule_resolve_providers_as": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "illumio_ip_list_description": {
+          "type": "string"
         },
-        "illumio_rule_providers": {
+        "illumio_ip_list_fqdns": {
           "type": "string"
         }
       }

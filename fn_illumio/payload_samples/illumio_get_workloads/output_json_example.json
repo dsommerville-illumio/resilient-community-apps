@@ -1,236 +1,3719 @@
 {
-    "version": 2.0,
-    "success": true,
-    "reason": null,
-    "content": {
-        "workloads": [
-            {
-                "href": "/orgs/1/workloads/3d14ec61-edaf-452e-b1b9-b7308652c0f6",
-                "created_at": "2021-09-13T16:01:07.735779Z",
-                "updated_at": "2021-12-16T16:47:04.458647Z",
-                "created_by": {
-                    "href": "/orgs/1/agents/17456"
-                },
-                "updated_by": {
-                    "href": "/orgs/1/agents/17456"
-                },
-                "caps": [
-                    "write"
-                ],
-                "hostname": "user-4",
-                "public_ip": "66.124.202.19",
-                "interfaces": [
-                    {
-                        "name": "eth0",
-                        "address": "fe80::402:ffff:feef:5a4d",
-                        "cidr_block": 64,
-                        "network": {
-                            "href": "/orgs/1/networks/9977853d-639e-4afd-a505-9e0fd419ce06"
-                        },
-                        "network_detection_mode": "link_local",
-                        "loopback": false
-                    },
-                    {
-                        "name": "eth0",
-                        "address": "10.1.0.46",
-                        "cidr_block": 24,
-                        "default_gateway_address": "10.1.0.1",
-                        "network": {
-                            "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
-                        },
-                        "network_detection_mode": "single_private_brn",
-                        "loopback": false
-                    },
-                    {
-                        "name": "eth0.public",
-                        "address": "66.124.202.19",
-                        "cidr_block": 32,
-                        "network": {
-                            "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
-                        },
-                        "network_detection_mode": "manual",
-                        "loopback": false
-                    }
-                ],
-                "service_provider": "example.com",
-                "data_center": "us-west.example.com",
-                "data_center_zone": "us-west",
-                "os_id": "ubuntu-x86_64-xenial",
-                "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
-                "online": true,
-                "deleted": false,
-                "ignored_interface_names": [],
-                "containers_inherit_host_policy": false,
-                "blocked_connection_action": "drop",
-                "labels": [
-                    {
-                        "href": "/orgs/1/labels/15420"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15431"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15430"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15411"
-                    }
-                ],
-                "agent": {
-                    "href": "/orgs/1/agents/17456",
-                    "config": {
-                        "mode": "illuminated",
-                        "log_traffic": false,
-                        "visibility_level": "flow_summary"
-                    },
-                    "status": {
-                        "status": "active",
-                        "uid": "us-west+i-0ab12cd3e4fg5678h",
-                        "instance_id": "i-0ab12cd3e4fg5678h",
-                        "last_heartbeat_on": "2022-01-07T16:14:31.378648Z",
-                        "uptime_seconds": 10025687,
-                        "agent_version": "21.2.0-7831",
-                        "managed_since": "2021-09-13T16:01:07.772006Z",
-                        "fw_config_current": false,
-                        "firewall_rule_count": 0,
-                        "security_policy_refresh_at": "2022-01-03T20:54:34.809195Z",
-                        "security_policy_applied_at": "2022-01-03T20:54:34.809195Z",
-                        "security_policy_received_at": "2022-01-03T20:54:34.809195Z",
-                        "agent_health_errors": {
-                            "errors": [],
-                            "warnings": []
-                        },
-                        "security_policy_sync_state": "syncing"
-                    },
-                    "unpair_allowed": true,
-                    "type": "Host"
-                },
-                "ven": {
-                    "href": "/orgs/1/vens/3d14ec61-edaf-452e-b1b9-b7308652c0f6"
-                },
-                "enforcement_mode": "visibility_only",
-                "visibility_level": "flow_summary"
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "workloads": [
+      {
+        "href": "/orgs/28/workloads/1fbe5dee-8bde-49cc-9a8f-6870a05a716e",
+        "created_at": "2022-01-28T22:54:18.034216Z",
+        "updated_at": "2022-03-10T04:23:57.441191Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130678"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130678"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-lb-3",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
             },
-            {
-                "href": "/orgs/1/workloads/1fd97272-1497-47b8-95c9-6f530dbe0749",
-                "created_at": "2021-09-13T16:00:39.951135Z",
-                "updated_at": "2021-12-16T16:47:04.465816Z",
-                "created_by": {
-                    "href": "/orgs/1/agents/17423"
-                },
-                "updated_by": {
-                    "href": "/orgs/1/agents/17423"
-                },
-                "caps": [
-                    "write"
-                ],
-                "hostname": "dev-db-2",
-                "public_ip": "66.124.202.19",
-                "interfaces": [
-                    {
-                        "name": "eth0",
-                        "address": "fe80::45a:d8ff:fea9:54b1",
-                        "cidr_block": 64,
-                        "network": {
-                            "href": "/orgs/1/networks/9977853d-639e-4afd-a505-9e0fd419ce06"
-                        },
-                        "network_detection_mode": "link_local",
-                        "loopback": false
-                    },
-                    {
-                        "name": "eth0",
-                        "address": "10.1.0.82",
-                        "cidr_block": 24,
-                        "default_gateway_address": "10.1.0.1",
-                        "network": {
-                            "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
-                        },
-                        "network_detection_mode": "single_private_brn",
-                        "loopback": false
-                    },
-                    {
-                        "name": "eth0.public",
-                        "address": "66.124.202.19",
-                        "cidr_block": 32,
-                        "network": {
-                            "href": "/orgs/1/networks/a9dd8b22-3108-4c64-911b-ac1b2eb5919e"
-                        },
-                        "network_detection_mode": "manual",
-                        "loopback": false
-                    }
-                ],
-                "service_provider": "example.com",
-                "data_center": "us-west.example.com",
-                "data_center_zone": "us-west",
-                "os_id": "ubuntu-x86_64-xenial",
-                "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
-                "online": true,
-                "deleted": false,
-                "ignored_interface_names": [],
-                "containers_inherit_host_policy": false,
-                "blocked_connection_action": "drop",
-                "labels": [
-                    {
-                        "href": "/orgs/1/labels/15427"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15426"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15418"
-                    },
-                    {
-                        "href": "/orgs/1/labels/15422"
-                    }
-                ],
-                "agent": {
-                    "href": "/orgs/1/agents/17423",
-                    "config": {
-                        "mode": "illuminated",
-                        "log_traffic": false,
-                        "visibility_level": "flow_summary"
-                    },
-                    "status": {
-                        "status": "active",
-                        "uid": "us-west+i-0e65e2aec3677d51e",
-                        "instance_id": "i-0e65e2aec3677d51e",
-                        "last_heartbeat_on": "2022-01-07T16:15:17.913215Z",
-                        "uptime_seconds": 10025636,
-                        "agent_version": "21.2.0-7831",
-                        "managed_since": "2021-09-13T16:00:39.974839Z",
-                        "fw_config_current": false,
-                        "firewall_rule_count": 0,
-                        "security_policy_refresh_at": "2022-01-03T20:55:54.361991Z",
-                        "security_policy_applied_at": "2022-01-03T20:55:54.361991Z",
-                        "security_policy_received_at": "2022-01-03T20:55:54.361991Z",
-                        "agent_health_errors": {
-                            "errors": [],
-                            "warnings": []
-                        },
-                        "security_policy_sync_state": "syncing"
-                    },
-                    "unpair_allowed": true,
-                    "type": "Host"
-                },
-                "ven": {
-                    "href": "/orgs/1/vens/1fd97272-1497-47b8-95c9-6f530dbe0749"
-                },
-                "enforcement_mode": "visibility_only",
-                "visibility_level": "flow_summary"
-            }
-        ]
-    },
-    "raw": null,
-    "inputs": {
-        "illumio_workload_enforcement_mode": "visibility_only",
-        "illumio_workload_managed": true
-    },
-    "metrics": {
-        "version": "1.0",
-        "package": "fn-illumio",
-        "package_version": "1.0.0",
-        "host": "C02G82JEMD6R",
-        "execution_time_ms": 534,
-        "timestamp": "2022-01-07 11:41:53"
-    }
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::426:2bff:fe53:b045",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.220",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21487"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130678",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-007ff950e17c8f31b",
+            "instance_id": "i-007ff950e17c8f31b",
+            "last_heartbeat_on": "2022-03-10T04:58:30.763908Z",
+            "uptime_seconds": 3480231,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:18.044689Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.073369Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.073369Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.073369Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/1fbe5dee-8bde-49cc-9a8f-6870a05a716e"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/424b21c5-f8c7-40d0-b2bd-53fd38f606c6",
+        "created_at": "2022-01-28T22:54:52.29287Z",
+        "updated_at": "2022-03-10T04:23:57.48183Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131033"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131033"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "linux-jumpbox-1",
+        "public_ip": "52.38.62.142",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.100.165",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.100.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "52.38.62.142",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4a5:31ff:fe7a:bbdd",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.13.0-1014-aws #15~20.04.1-Ubuntu SMP Thu Feb 10 17:55:03 UTC 2022 (Ubuntu 20.04.4 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21495"
+          },
+          {
+            "href": "/orgs/28/labels/21494"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131033",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0786119bf8d4dfda7",
+            "instance_id": "i-0786119bf8d4dfda7",
+            "last_heartbeat_on": "2022-03-10T04:58:30.298617Z",
+            "uptime_seconds": 475179,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:52.303542Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.493791Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.493791Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.493791Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/424b21c5-f8c7-40d0-b2bd-53fd38f606c6"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/0c2ee289-3f07-4842-97fa-2acf9d8f837c",
+        "created_at": "2022-01-28T22:54:17.016051Z",
+        "updated_at": "2022-03-10T04:23:57.562762Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130675"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130675"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-lb-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4d6:ceff:fee1:1367",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.150",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21487"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130675",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-052af9b6a0c5399a6",
+            "instance_id": "i-052af9b6a0c5399a6",
+            "last_heartbeat_on": "2022-03-10T04:58:30.276904Z",
+            "uptime_seconds": 3480245,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:17.026261Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.479573Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.479573Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.479573Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/0c2ee289-3f07-4842-97fa-2acf9d8f837c"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/de7c3ea1-6d5c-4737-8cfc-27a53270ea61",
+        "created_at": "2022-01-28T22:54:53.125898Z",
+        "updated_at": "2022-03-10T04:23:57.465346Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131034"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131034"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "fin-web-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.184",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::462:55ff:fe2d:f7fd",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21478"
+          },
+          {
+            "href": "/orgs/28/labels/21490"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131034",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0a99d6109184dd046",
+            "instance_id": "i-0a99d6109184dd046",
+            "last_heartbeat_on": "2022-03-10T04:58:30.625783Z",
+            "uptime_seconds": 3480237,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:53.135882Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.788361Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.788361Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.788361Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/de7c3ea1-6d5c-4737-8cfc-27a53270ea61"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/0aaf4c39-a956-4e19-b606-b866616cc476",
+        "created_at": "2022-01-28T22:54:41.599778Z",
+        "updated_at": "2022-03-10T04:23:57.400152Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131029"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131029"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "fin-db-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::455:d6ff:fe72:98a5",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.92",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21482"
+          },
+          {
+            "href": "/orgs/28/labels/21490"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131029",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-08934080b00b35174",
+            "instance_id": "i-08934080b00b35174",
+            "last_heartbeat_on": "2022-03-10T04:58:29.867124Z",
+            "uptime_seconds": 3480227,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:41.610326Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.093194Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.093194Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.093194Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/0aaf4c39-a956-4e19-b606-b866616cc476"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/a3bd7c69-a918-4f46-b517-c7a45f3114d5",
+        "created_at": "2022-01-28T22:54:29.539256Z",
+        "updated_at": "2022-03-10T04:23:57.449209Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131007"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131007"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "dev-app-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.110",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4b2:e0ff:fe2e:19cf",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21489"
+          },
+          {
+            "href": "/orgs/28/labels/21488"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21478"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131007",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0102b036f5b224f50",
+            "instance_id": "i-0102b036f5b224f50",
+            "last_heartbeat_on": "2022-03-10T04:58:29.855915Z",
+            "uptime_seconds": 3480229,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:29.548741Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.020856Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.020856Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.020856Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/a3bd7c69-a918-4f46-b517-c7a45f3114d5"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/20c1520f-215c-43a4-8b3a-362171d0ea06",
+        "created_at": "2022-01-28T22:54:41.638418Z",
+        "updated_at": "2022-03-10T04:23:57.498366Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131030"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131030"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "dns-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.204",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::460:62ff:fea1:40cd",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21499"
+          },
+          {
+            "href": "/orgs/28/labels/21485"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131030",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-09cff8a5122aedbd5",
+            "instance_id": "i-09cff8a5122aedbd5",
+            "last_heartbeat_on": "2022-03-10T04:58:29.926883Z",
+            "uptime_seconds": 3480252,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:41.64853Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.113111Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.113111Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.113111Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/20c1520f-215c-43a4-8b3a-362171d0ea06"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/fa2f3f9b-a899-4902-850f-126daf86b8b1",
+        "created_at": "2022-01-28T22:55:08.055818Z",
+        "updated_at": "2022-03-10T04:23:57.490156Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131040"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131040"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "user-4",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.145",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4fd:47ff:fe4d:87b1",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21493"
+          },
+          {
+            "href": "/orgs/28/labels/21492"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131040",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-082d4f49b21489aec",
+            "instance_id": "i-082d4f49b21489aec",
+            "last_heartbeat_on": "2022-03-10T04:58:29.921928Z",
+            "uptime_seconds": 3480029,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:55:08.067171Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.22755Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.22755Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.22755Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/fa2f3f9b-a899-4902-850f-126daf86b8b1"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/e815fc29-657d-43d7-82d9-758f6d6a59fa",
+        "created_at": "2022-01-28T22:54:17.546724Z",
+        "updated_at": "2022-03-10T04:23:57.457136Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130677"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130677"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-db-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.152",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::42e:15ff:fe60:7b6f",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21482"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130677",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0eb9df0d52c92dd81",
+            "instance_id": "i-0eb9df0d52c92dd81",
+            "last_heartbeat_on": "2022-03-10T04:58:29.433729Z",
+            "uptime_seconds": 3480222,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:17.557072Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.898891Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.898891Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.898891Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/e815fc29-657d-43d7-82d9-758f6d6a59fa"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/71000830-be4d-49a7-853e-7a555eccb2d3",
+        "created_at": "2022-01-28T22:54:42.544592Z",
+        "updated_at": "2022-03-10T04:23:57.390892Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131031"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131031"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "fin-db-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::444:2cff:fe62:f7f3",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.159",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21482"
+          },
+          {
+            "href": "/orgs/28/labels/21490"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131031",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0743c8337d70f1032",
+            "instance_id": "i-0743c8337d70f1032",
+            "last_heartbeat_on": "2022-03-10T04:58:29.898583Z",
+            "uptime_seconds": 3480351,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:42.554392Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.13966Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.13966Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.13966Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/71000830-be4d-49a7-853e-7a555eccb2d3"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/64356c9b-e09f-44ac-9d8c-321a500dfc5f",
+        "created_at": "2022-01-28T22:54:17.328713Z",
+        "updated_at": "2022-03-10T04:23:57.408731Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130676"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130676"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-lb-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.116",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4e9:96ff:fee4:3cb5",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21487"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130676",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-05ba318d41db500ef",
+            "instance_id": "i-05ba318d41db500ef",
+            "last_heartbeat_on": "2022-03-10T04:58:29.294388Z",
+            "uptime_seconds": 3480164,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:17.339201Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.431374Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.431374Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.431374Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/64356c9b-e09f-44ac-9d8c-321a500dfc5f"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/df01225c-e429-4f8f-892f-7c83c031add9",
+        "created_at": "2022-01-28T22:54:30.235832Z",
+        "updated_at": "2022-03-10T04:23:57.416786Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131008"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131008"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "dev-app-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.89",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::48b:8fff:fe2e:21e9",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21489"
+          },
+          {
+            "href": "/orgs/28/labels/21488"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21478"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131008",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-01cfc2948682ed732",
+            "instance_id": "i-01cfc2948682ed732",
+            "last_heartbeat_on": "2022-03-10T04:58:30.431452Z",
+            "uptime_seconds": 3480401,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:30.245897Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.768271Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.768271Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.768271Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/df01225c-e429-4f8f-892f-7c83c031add9"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/77cb9723-1b89-495a-a058-73f39802dcd8",
+        "created_at": "2022-01-28T22:54:54.284345Z",
+        "updated_at": "2022-03-10T04:23:57.424635Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131035"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131035"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "ntp-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::40c:94ff:fe50:49ed",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.119",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21486"
+          },
+          {
+            "href": "/orgs/28/labels/21485"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131035",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0a454ac052a3285c7",
+            "instance_id": "i-0a454ac052a3285c7",
+            "last_heartbeat_on": "2022-03-10T04:58:30.346403Z",
+            "uptime_seconds": 3480106,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:54.293841Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.559304Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.559304Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.559304Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/77cb9723-1b89-495a-a058-73f39802dcd8"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/7c2e50b1-f447-4a48-ba58-0f517b7c7380",
+        "created_at": "2022-01-28T22:56:55.014931Z",
+        "updated_at": "2022-03-10T04:23:57.432814Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131376"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131376"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "EC2AMAZ-HG5FUEH",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth32769",
+            "address": "10.1.0.192",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth32769.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "fe80::51e4:aa47:ac9c:a383",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "win-x86_64-server",
+        "os_detail": "17763.1.amd64fre.rs5_release.180914-1434 (Windows Server 2019 Datacenter)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21491"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131376",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0f0fb591691dc3e35",
+            "instance_id": "i-0f0fb591691dc3e35",
+            "last_heartbeat_on": "2022-03-10T04:58:30.52132Z",
+            "uptime_seconds": 3475447,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:56:55.025578Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.694088Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.694088Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.694088Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/7c2e50b1-f447-4a48-ba58-0f517b7c7380"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/a0a1a599-80aa-4660-90ed-950ca0767568",
+        "created_at": "2022-01-28T22:54:04.897307Z",
+        "updated_at": "2022-03-10T04:23:57.473629Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130672"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130672"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-app-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4c1:c7ff:fec0:30d5",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.56",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21478"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130672",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0a45b9c4006087cff",
+            "instance_id": "i-0a45b9c4006087cff",
+            "last_heartbeat_on": "2022-03-10T04:58:29.590211Z",
+            "uptime_seconds": 3480235,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:04.907646Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.794992Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.794992Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.794992Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/a0a1a599-80aa-4660-90ed-950ca0767568"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/932197f6-af89-42c5-96cc-682edf59b88e",
+        "created_at": "2022-01-28T22:54:40.522659Z",
+        "updated_at": "2022-03-10T04:23:57.505999Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131028"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131028"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "dev-db-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::448:abff:fefc:8137",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.195",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21489"
+          },
+          {
+            "href": "/orgs/28/labels/21488"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21482"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131028",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0f1630875ba1b1652",
+            "instance_id": "i-0f1630875ba1b1652",
+            "last_heartbeat_on": "2022-03-10T04:58:29.53675Z",
+            "uptime_seconds": 3480352,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:40.532676Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.975502Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.975502Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.975502Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/932197f6-af89-42c5-96cc-682edf59b88e"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+        "created_at": "2022-01-28T22:56:52.272454Z",
+        "updated_at": "2022-03-10T04:23:57.51433Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131373"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131373"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "windows-jumpbox-1",
+        "public_ip": "34.218.79.69",
+        "interfaces": [
+          {
+            "name": "eth32769",
+            "address": "10.1.100.149",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.100.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth32769.public",
+            "address": "34.218.79.69",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "fe80::d0e3:91c5:8366:9f5f",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "win-x86_64-server",
+        "os_detail": "17763.1.amd64fre.rs5_release.180914-1434 (Windows Server 2019 Datacenter)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21495"
+          },
+          {
+            "href": "/orgs/28/labels/21494"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131373",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0eda0d21508218f3f",
+            "instance_id": "i-0eda0d21508218f3f",
+            "last_heartbeat_on": "2022-03-10T04:58:24.929857Z",
+            "uptime_seconds": 3475231,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:56:52.28273Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:02.694998Z",
+            "security_policy_applied_at": "2022-03-10T04:24:02.694998Z",
+            "security_policy_received_at": "2022-03-10T04:24:02.694998Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/431ff8e6-39ca-420a-be68-a8b45a1644fd",
+        "created_at": "2022-01-28T22:56:56.339546Z",
+        "updated_at": "2022-03-10T04:23:57.522316Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131377"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131377"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "EC2AMAZ-C0MP9SF",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth32769.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "fe80::f4c6:bf61:e0b3:b7ac",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "10.1.0.158",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "win-x86_64-server",
+        "os_detail": "17763.1.amd64fre.rs5_release.180914-1434 (Windows Server 2019 Datacenter)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21491"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131377",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-06506a5ddfd008eb2",
+            "instance_id": "i-06506a5ddfd008eb2",
+            "last_heartbeat_on": "2022-03-10T04:58:30.16619Z",
+            "uptime_seconds": 3475630,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:56:56.349552Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.348883Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.348883Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.348883Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/431ff8e6-39ca-420a-be68-a8b45a1644fd"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/e08b424e-da53-46b4-9f78-1915867d2cfb",
+        "created_at": "2022-01-28T22:54:30.995081Z",
+        "updated_at": "2022-03-10T04:23:57.530503Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131009"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131009"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "dev-db-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4aa:7bff:fe86:b0cb",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.120",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21489"
+          },
+          {
+            "href": "/orgs/28/labels/21488"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21482"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131009",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0129a080c41f51f65",
+            "instance_id": "i-0129a080c41f51f65",
+            "last_heartbeat_on": "2022-03-10T04:58:29.901618Z",
+            "uptime_seconds": 3480121,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:31.007094Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.251023Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.251023Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.251023Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/e08b424e-da53-46b4-9f78-1915867d2cfb"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/f38c64de-d437-4037-89f8-2bed85debdf0",
+        "created_at": "2022-01-28T22:56:52.455781Z",
+        "updated_at": "2022-03-10T04:23:57.538648Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131374"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131374"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "windows-dc",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth32769",
+            "address": "10.1.0.180",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth32769.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "fe80::d84b:48bf:f63a:f23",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "win-x86_64-server",
+        "os_detail": "17763.1.amd64fre.rs5_release.180914-1434 (Windows Server 2019 Datacenter)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21496"
+          },
+          {
+            "href": "/orgs/28/labels/21485"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131374",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-046fe803acb9e9581",
+            "instance_id": "i-046fe803acb9e9581",
+            "last_heartbeat_on": "2022-03-10T04:58:29.560405Z",
+            "uptime_seconds": 3476375,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:56:52.465406Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.00801Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.00801Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.00801Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/f38c64de-d437-4037-89f8-2bed85debdf0"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/44346183-79ce-47a3-908d-92cd150a0446",
+        "created_at": "2022-01-28T22:55:06.381446Z",
+        "updated_at": "2022-03-10T04:23:57.546764Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131039"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131039"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "user-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.59",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::401:6bff:fe6a:f659",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21493"
+          },
+          {
+            "href": "/orgs/28/labels/21492"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131039",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-05092c95e3202a696",
+            "instance_id": "i-05092c95e3202a696",
+            "last_heartbeat_on": "2022-03-10T04:58:30.181922Z",
+            "uptime_seconds": 3480145,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:55:06.391774Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.367924Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.367924Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.367924Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/44346183-79ce-47a3-908d-92cd150a0446"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/d911ba88-7410-4945-8124-c140ee644fe3",
+        "created_at": "2022-01-28T22:55:05.146338Z",
+        "updated_at": "2022-03-10T04:23:57.554827Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131038"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131038"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "user-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.190",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::43c:3bff:fe4d:ca49",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21493"
+          },
+          {
+            "href": "/orgs/28/labels/21492"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131038",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0478b338d14a4a91c",
+            "instance_id": "i-0478b338d14a4a91c",
+            "last_heartbeat_on": "2022-03-10T04:58:30.364418Z",
+            "uptime_seconds": 3480029,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:55:05.157474Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.374236Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.374236Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.374236Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/d911ba88-7410-4945-8124-c140ee644fe3"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/cc34db03-9750-40ce-85e5-1eec865c9392",
+        "created_at": "2022-01-28T22:54:16.545653Z",
+        "updated_at": "2022-03-10T04:23:57.570762Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130674"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130674"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-db-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.38",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4a9:89ff:fe84:5c9f",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21482"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130674",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-09fb6f62b3a15ee0b",
+            "instance_id": "i-09fb6f62b3a15ee0b",
+            "last_heartbeat_on": "2022-03-10T04:58:29.976182Z",
+            "uptime_seconds": 3480196,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:16.55598Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.269153Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.269153Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.269153Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/cc34db03-9750-40ce-85e5-1eec865c9392"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/337b81e0-4e93-40f7-bcb2-844e3084465c",
+        "created_at": "2022-01-28T22:54:05.868926Z",
+        "updated_at": "2022-03-10T04:23:57.578886Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130673"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130673"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "admin-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.47",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::45a:a6ff:feea:793",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21483"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130673",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0f4a6a54ef27c6efe",
+            "instance_id": "i-0f4a6a54ef27c6efe",
+            "last_heartbeat_on": "2022-03-10T04:58:29.760344Z",
+            "uptime_seconds": 3480225,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:05.879302Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.78059Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.78059Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.78059Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/337b81e0-4e93-40f7-bcb2-844e3084465c"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/92a29d45-25ee-4b10-af92-27fd9c6d8969",
+        "created_at": "2022-01-28T22:55:08.110225Z",
+        "updated_at": "2022-03-10T04:23:57.587146Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131041"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131041"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "user-3",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.102",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::44c:2dff:fe57:4619",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21493"
+          },
+          {
+            "href": "/orgs/28/labels/21492"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131041",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-07cd22014779003ff",
+            "instance_id": "i-07cd22014779003ff",
+            "last_heartbeat_on": "2022-03-10T04:58:30.184721Z",
+            "uptime_seconds": 3480245,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:55:08.120865Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.483248Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.483248Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.483248Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/92a29d45-25ee-4b10-af92-27fd9c6d8969"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/235ce8f7-9a52-4da9-a831-1c58b01ffcab",
+        "created_at": "2022-01-28T22:54:04.882439Z",
+        "updated_at": "2022-03-10T04:23:57.594849Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130671"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130671"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-app-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.207",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::47f:18ff:fee4:29ed",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21478"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130671",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-08f6d227ea24845b7",
+            "instance_id": "i-08f6d227ea24845b7",
+            "last_heartbeat_on": "2022-03-10T04:58:30.782504Z",
+            "uptime_seconds": 3480244,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:04.897149Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:02.965614Z",
+            "security_policy_applied_at": "2022-03-10T04:24:02.965614Z",
+            "security_policy_received_at": "2022-03-10T04:24:02.965614Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/235ce8f7-9a52-4da9-a831-1c58b01ffcab"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/2fca97cd-f836-4f28-972b-b112b0c647d6",
+        "created_at": "2022-01-28T22:54:04.513034Z",
+        "updated_at": "2022-03-10T04:23:57.602816Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130669"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130669"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "core-app-3",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.132",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4f4:b7ff:fe0c:286b",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          },
+          {
+            "href": "/orgs/28/labels/21479"
+          },
+          {
+            "href": "/orgs/28/labels/21478"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130669",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-02b840e2a7221722b",
+            "instance_id": "i-02b840e2a7221722b",
+            "last_heartbeat_on": "2022-03-10T04:58:30.130515Z",
+            "uptime_seconds": 3480345,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:04.522715Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.359307Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.359307Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.359307Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/2fca97cd-f836-4f28-972b-b112b0c647d6"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/6567900a-b49f-43cc-93a7-c892da39aad1",
+        "created_at": "2022-01-28T22:54:04.839198Z",
+        "updated_at": "2022-03-10T04:23:57.610795Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130670"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130670"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "admin-2",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::481:5cff:fe83:52b3",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.188",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21484"
+          },
+          {
+            "href": "/orgs/28/labels/21483"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130670",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-035d1095afe5c024b",
+            "instance_id": "i-035d1095afe5c024b",
+            "last_heartbeat_on": "2022-03-10T04:58:30.749947Z",
+            "uptime_seconds": 3480102,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:04.850992Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:02.951952Z",
+            "security_policy_applied_at": "2022-03-10T04:24:02.951952Z",
+            "security_policy_received_at": "2022-03-10T04:24:02.951952Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/6567900a-b49f-43cc-93a7-c892da39aad1"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/51cbcd7d-bd05-4485-a08b-5205ce24992a",
+        "created_at": "2022-01-28T22:54:43.404532Z",
+        "updated_at": "2022-03-10T04:23:57.619064Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131032"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131032"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "fin-web-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.215",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::42c:c9ff:fe50:350d",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21478"
+          },
+          {
+            "href": "/orgs/28/labels/21490"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131032",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0d2c3d4cd18dc2dac",
+            "instance_id": "i-0d2c3d4cd18dc2dac",
+            "last_heartbeat_on": "2022-03-10T04:58:29.808814Z",
+            "uptime_seconds": 3480263,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:43.415102Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.022523Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.022523Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.022523Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/51cbcd7d-bd05-4485-a08b-5205ce24992a"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/71d7635d-6e65-4e57-a0c7-7ddb50af30ac",
+        "created_at": "2022-01-28T22:54:28.349533Z",
+        "updated_at": "2022-03-10T04:23:57.627252Z",
+        "created_by": {
+          "href": "/orgs/28/agents/130679"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/130679"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "crm-db-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::452:d7ff:fe6b:761b",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.77",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21482"
+          },
+          {
+            "href": "/orgs/28/labels/21497"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/130679",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-023f4be22d50abd71",
+            "instance_id": "i-023f4be22d50abd71",
+            "last_heartbeat_on": "2022-03-10T04:58:30.841336Z",
+            "uptime_seconds": 3480236,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:28.359568Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.277119Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.277119Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.277119Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/71d7635d-6e65-4e57-a0c7-7ddb50af30ac"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/22c9be04-fa5d-4499-a663-b1bd8863038a",
+        "created_at": "2022-01-28T22:54:55.033133Z",
+        "updated_at": "2022-03-10T04:23:57.635006Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131036"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131036"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "rt4-db-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.84",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::437:5eff:fe22:5fb1",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21482"
+          },
+          {
+            "href": "/orgs/28/labels/21498"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131036",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-0c4a4d3f888076cff",
+            "instance_id": "i-0c4a4d3f888076cff",
+            "last_heartbeat_on": "2022-03-10T04:58:30.252727Z",
+            "uptime_seconds": 3480026,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:55.043018Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.405092Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.405092Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.405092Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/22c9be04-fa5d-4499-a663-b1bd8863038a"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/e524a0a2-afc2-497a-bf45-b4823afa6012",
+        "created_at": "2022-01-28T22:54:29.480976Z",
+        "updated_at": "2022-03-10T04:23:57.642754Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131006"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131006"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "crm-web-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "10.1.0.153",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::4fd:4dff:fe0f:7061",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21478"
+          },
+          {
+            "href": "/orgs/28/labels/21497"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131006",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-02f124ab67c5d6e0b",
+            "instance_id": "i-02f124ab67c5d6e0b",
+            "last_heartbeat_on": "2022-03-10T04:58:29.443351Z",
+            "uptime_seconds": 3480153,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:29.490742Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.591308Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.591308Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.591308Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/e524a0a2-afc2-497a-bf45-b4823afa6012"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/1a5ea894-c5c4-444b-9b88-5a05d8d4c310",
+        "created_at": "2022-01-28T22:54:56.244339Z",
+        "updated_at": "2022-03-10T04:23:57.650316Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131037"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131037"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "rt4-web-1",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth0",
+            "address": "10.1.0.253",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth0.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth0",
+            "address": "fe80::45b:4aff:fece:4687",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "ubuntu-x86_64-xenial",
+        "os_detail": "5.4.0-1038-aws #40-Ubuntu SMP Fri Feb 5 23:50:40 UTC 2021 (Ubuntu 20.04.2 LTS)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21478"
+          },
+          {
+            "href": "/orgs/28/labels/21498"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131037",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-001d5769562ebebe6",
+            "instance_id": "i-001d5769562ebebe6",
+            "last_heartbeat_on": "2022-03-10T04:58:29.871194Z",
+            "uptime_seconds": 3480162,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:54:56.254612Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:04.067484Z",
+            "security_policy_applied_at": "2022-03-10T04:24:04.067484Z",
+            "security_policy_received_at": "2022-03-10T04:24:04.067484Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/1a5ea894-c5c4-444b-9b88-5a05d8d4c310"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      },
+      {
+        "href": "/orgs/28/workloads/b9e460b9-df76-478a-86fc-f9aa1f7f2af6",
+        "created_at": "2022-01-28T22:56:53.373063Z",
+        "updated_at": "2022-03-10T04:23:57.657978Z",
+        "created_by": {
+          "href": "/orgs/28/agents/131375"
+        },
+        "updated_by": {
+          "href": "/orgs/28/agents/131375"
+        },
+        "caps": [
+          "write"
+        ],
+        "hostname": "EC2AMAZ-IISPG0F",
+        "public_ip": "44.228.236.80",
+        "interfaces": [
+          {
+            "name": "eth32769",
+            "address": "10.1.0.22",
+            "cidr_block": 24,
+            "default_gateway_address": "10.1.0.1",
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "single_private_brn",
+            "loopback": false
+          },
+          {
+            "name": "eth32769.public",
+            "address": "44.228.236.80",
+            "cidr_block": 32,
+            "network": {
+              "href": "/orgs/28/networks/15ef3cf8-9210-4174-9628-472efa09cd30"
+            },
+            "network_detection_mode": "manual",
+            "loopback": false
+          },
+          {
+            "name": "eth32769",
+            "address": "fe80::9d42:a75b:f183:3151",
+            "cidr_block": 64,
+            "network": {
+              "href": "/orgs/28/networks/238e7063-547a-4d54-bfd8-cd4227273168"
+            },
+            "network_detection_mode": "link_local",
+            "loopback": false
+          }
+        ],
+        "service_provider": "amazonaws.com",
+        "data_center": "us-west-2.amazonaws.com",
+        "data_center_zone": "us-west-2a",
+        "os_id": "win-x86_64-server",
+        "os_detail": "17763.1.amd64fre.rs5_release.180914-1434 (Windows Server 2019 Datacenter)",
+        "online": true,
+        "deleted": false,
+        "ignored_interface_names": [],
+        "containers_inherit_host_policy": false,
+        "blocked_connection_action": "drop",
+        "labels": [
+          {
+            "href": "/orgs/28/labels/21491"
+          },
+          {
+            "href": "/orgs/28/labels/21481"
+          },
+          {
+            "href": "/orgs/28/labels/21480"
+          }
+        ],
+        "services": {},
+        "agent": {
+          "href": "/orgs/28/agents/131375",
+          "config": {
+            "mode": "illuminated",
+            "log_traffic": false,
+            "visibility_level": "flow_summary"
+          },
+          "status": {
+            "status": "active",
+            "uid": "us-west-2a+i-08e9f0a35263d3499",
+            "instance_id": "i-08e9f0a35263d3499",
+            "last_heartbeat_on": "2022-03-10T04:58:29.662046Z",
+            "uptime_seconds": 3475766,
+            "agent_version": "21.2.0-7831",
+            "managed_since": "2022-01-28T22:56:53.382993Z",
+            "fw_config_current": true,
+            "firewall_rule_count": 0,
+            "security_policy_refresh_at": "2022-03-10T04:24:03.975367Z",
+            "security_policy_applied_at": "2022-03-10T04:24:03.975367Z",
+            "security_policy_received_at": "2022-03-10T04:24:03.975367Z",
+            "agent_health_errors": {
+              "errors": [],
+              "warnings": []
+            },
+            "agent_health": [],
+            "security_policy_sync_state": "applied"
+          },
+          "unpair_allowed": true,
+          "type": "Host"
+        },
+        "ven": {
+          "href": "/orgs/28/vens/b9e460b9-df76-478a-86fc-f9aa1f7f2af6"
+        },
+        "enforcement_mode": "visibility_only",
+        "visibility_level": "flow_summary"
+      }
+    ]
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_workload_enforcement_mode": "visibility_only",
+    "illumio_workload_managed": true
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 646,
+    "timestamp": "2022-03-09 23:58:31"
+  }
 }

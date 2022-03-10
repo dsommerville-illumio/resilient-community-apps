@@ -1,38 +1,81 @@
 {
-    "version": 2.0,
-    "success": true,
-    "reason": null,
-    "content": {
-        "href": "/orgs/1/sec_policy/draft/rule_sets/11110",
-        "name": "RS-IBM-SOAR-3389-TCP",
-        "created_at": "2022-01-07T15:23:25.411Z",
-        "updated_at": "2022-01-07T15:23:25.411Z",
-        "update_type": "create",
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "href": "/orgs/28/sec_policy/active/rule_sets/12269",
+    "name": "RS-IBM-SOAR-3389-TCP",
+    "created_at": "2022-03-04T18:46:12.676Z",
+    "updated_at": "2022-03-04T18:46:14.377Z",
+    "created_by": {
+      "href": "/users/520"
+    },
+    "updated_by": {
+      "href": "/users/520"
+    },
+    "caps": [
+      "write",
+      "provision"
+    ],
+    "enabled": true,
+    "scopes": [
+      []
+    ],
+    "rules": [
+      {
+        "href": "/orgs/28/sec_policy/active/rule_sets/12269/sec_rules/20760",
+        "created_at": "2022-03-04T18:46:14.367Z",
+        "updated_at": "2022-03-04T18:46:14.377Z",
         "created_by": {
-            "href": "/users/464"
+          "href": "/users/520"
         },
         "updated_by": {
-            "href": "/users/464"
+          "href": "/users/520"
         },
-        "caps": [
-            "write",
-            "provision"
+        "ingress_services": [],
+        "providers": [
+          {
+            "virtual_service": {
+              "href": "/orgs/28/sec_policy/active/virtual_services/0447a982-ba9d-462d-bfc7-29bdac3627c3"
+            }
+          }
+        ],
+        "consumers": [
+          {
+            "ip_list": {
+              "href": "/orgs/28/sec_policy/active/ip_lists/105"
+            }
+          }
         ],
         "enabled": true,
-        "scopes": [
-            []
-        ]
-    },
-    "raw": null,
-    "inputs": {
-        "illumio_ruleset_name": "RS-IBM-SOAR-3389-TCP"
-    },
-    "metrics": {
-        "version": "1.0",
-        "package": "fn-illumio",
-        "package_version": "1.0.0",
-        "host": "C02G82JEMD6R",
-        "execution_time_ms": 780,
-        "timestamp": "2022-01-07 10:23:25"
-    }
+        "resolve_labels_as": {
+          "providers": [
+            "virtual_services"
+          ],
+          "consumers": [
+            "workloads"
+          ]
+        },
+        "sec_connect": false,
+        "stateless": false,
+        "machine_auth": false,
+        "consuming_security_principals": [],
+        "unscoped_consumers": false,
+        "network_type": "brn"
+      }
+    ],
+    "ip_tables_rules": []
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_ruleset_name": "RS-IBM-SOAR-3389-TCP"
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 536,
+    "timestamp": "2022-03-09 23:58:20"
+  }
 }

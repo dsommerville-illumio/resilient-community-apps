@@ -24,9 +24,6 @@
         "updated_at": {
           "type": "string"
         },
-        "update_type": {
-          "type": "string"
-        },
         "created_by": {
           "type": "object",
           "properties": {
@@ -52,6 +49,9 @@
         "apply_to": {
           "type": "string"
         },
+        "service_addresses": {
+          "type": "array"
+        },
         "service_ports": {
           "type": "array",
           "items": {
@@ -67,6 +67,9 @@
           }
         },
         "ip_overrides": {
+          "type": "array"
+        },
+        "labels": {
           "type": "array"
         }
       }

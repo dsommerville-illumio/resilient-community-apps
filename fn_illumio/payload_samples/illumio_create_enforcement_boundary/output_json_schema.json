@@ -24,9 +24,6 @@
         "updated_at": {
           "type": "string"
         },
-        "update_type": {
-          "type": "string"
-        },
         "created_by": {
           "type": "object",
           "properties": {

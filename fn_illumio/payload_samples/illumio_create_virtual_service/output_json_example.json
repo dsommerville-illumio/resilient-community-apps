@@ -1,45 +1,46 @@
 {
-    "version": 2.0,
-    "success": true,
-    "reason": null,
-    "content": {
-        "href": "/orgs/1/sec_policy/draft/virtual_services/575f43f4-3f99-4bb0-8a6f-9e2da7a9fbd2",
-        "name": "VS-IBM-SOAR-3389-TCP",
-        "created_at": "2022-01-07T15:23:17.885Z",
-        "updated_at": "2022-01-07T15:23:17.897Z",
-        "update_type": "create",
-        "created_by": {
-            "href": "/users/464"
-        },
-        "updated_by": {
-            "href": "/users/464"
-        },
-        "caps": [
-            "write",
-            "provision",
-            "delete"
-        ],
-        "apply_to": "host_only",
-        "service_ports": [
-            {
-                "port": 3389,
-                "proto": 6
-            }
-        ],
-        "ip_overrides": []
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "href": "/orgs/28/sec_policy/active/virtual_services/0447a982-ba9d-462d-bfc7-29bdac3627c3",
+    "name": "VS-IBM-SOAR-3389-TCP",
+    "created_at": "2022-03-04T18:46:07.118Z",
+    "updated_at": "2022-03-04T18:46:07.121Z",
+    "created_by": {
+      "href": "/users/520"
     },
-    "raw": null,
-    "inputs": {
-        "illumio_protocol": "TCP",
-        "illumio_port": 3389,
-        "illumio_virtual_service_name": "VS-IBM-SOAR-3389-TCP"
+    "updated_by": {
+      "href": "/users/520"
     },
-    "metrics": {
-        "version": "1.0",
-        "package": "fn-illumio",
-        "package_version": "1.0.0",
-        "host": "C02G82JEMD6R",
-        "execution_time_ms": 658,
-        "timestamp": "2022-01-07 10:23:17"
-    }
+    "caps": [
+      "write",
+      "provision",
+      "delete"
+    ],
+    "apply_to": "host_only",
+    "service_addresses": [],
+    "service_ports": [
+      {
+        "port": 3389,
+        "proto": 6
+      }
+    ],
+    "ip_overrides": [],
+    "labels": []
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_protocol": "TCP",
+    "illumio_port": 3389,
+    "illumio_virtual_service_name": "VS-IBM-SOAR-3389-TCP"
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 512,
+    "timestamp": "2022-03-09 23:58:13"
+  }
 }

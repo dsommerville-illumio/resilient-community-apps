@@ -22,6 +22,20 @@
                 "properties": {
                   "ip": {
                     "type": "string"
+                  },
+                  "ip_lists": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "href": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -35,9 +49,6 @@
                     "type": "object",
                     "properties": {
                       "href": {
-                        "type": "string"
-                      },
-                      "name": {
                         "type": "string"
                       },
                       "hostname": {
@@ -75,6 +86,15 @@
                   },
                   "proto": {
                     "type": "integer"
+                  },
+                  "process_name": {
+                    "type": "string"
+                  },
+                  "windows_service_name": {
+                    "type": "string"
+                  },
+                  "user_name": {
+                    "type": "string"
                   }
                 }
               },

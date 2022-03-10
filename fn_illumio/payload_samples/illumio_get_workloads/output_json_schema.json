@@ -84,12 +84,18 @@
                     },
                     "default_gateway_address": {
                       "type": "string"
-                    },
-                    "link_state": {
-                      "type": "string"
                     }
                   }
                 }
+              },
+              "service_provider": {
+                "type": "string"
+              },
+              "data_center": {
+                "type": "string"
+              },
+              "data_center_zone": {
+                "type": "string"
               },
               "os_id": {
                 "type": "string"
@@ -112,6 +118,20 @@
               "blocked_connection_action": {
                 "type": "string"
               },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "services": {
+                "type": "object"
+              },
               "agent": {
                 "type": "object",
                 "properties": {
@@ -127,18 +147,7 @@
                       "log_traffic": {
                         "type": "boolean"
                       },
-                      "security_policy_update_mode": {
-                        "type": "string"
-                      },
                       "visibility_level": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "secure_connect": {
-                    "type": "object",
-                    "properties": {
-                      "matching_issuer_name": {
                         "type": "string"
                       }
                     }
@@ -147,6 +156,12 @@
                     "type": "object",
                     "properties": {
                       "status": {
+                        "type": "string"
+                      },
+                      "uid": {
+                        "type": "string"
+                      },
+                      "instance_id": {
                         "type": "string"
                       },
                       "last_heartbeat_on": {
@@ -167,6 +182,15 @@
                       "firewall_rule_count": {
                         "type": "integer"
                       },
+                      "security_policy_refresh_at": {
+                        "type": "string"
+                      },
+                      "security_policy_applied_at": {
+                        "type": "string"
+                      },
+                      "security_policy_received_at": {
+                        "type": "string"
+                      },
                       "agent_health_errors": {
                         "type": "object",
                         "properties": {
@@ -178,22 +202,10 @@
                           }
                         }
                       },
+                      "agent_health": {
+                        "type": "array"
+                      },
                       "security_policy_sync_state": {
-                        "type": "string"
-                      },
-                      "security_policy_refresh_at": {
-                        "type": "string"
-                      },
-                      "security_policy_applied_at": {
-                        "type": "string"
-                      },
-                      "security_policy_received_at": {
-                        "type": "string"
-                      },
-                      "uid": {
-                        "type": "string"
-                      },
-                      "instance_id": {
                         "type": "string"
                       }
                     }
@@ -219,40 +231,6 @@
               },
               "visibility_level": {
                 "type": "string"
-              },
-              "service_provider": {
-                "type": "string"
-              },
-              "data_center": {
-                "type": "string"
-              },
-              "data_center_zone": {
-                "type": "string"
-              },
-              "firewall_coexistence": {
-                "type": "object",
-                "properties": {
-                  "illumio_primary": {
-                    "type": "boolean"
-                  }
-                }
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "labels": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "href": {
-                      "type": "string"
-                    }
-                  }
-                }
               }
             }
           }

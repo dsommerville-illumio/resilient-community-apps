@@ -1,129 +1,492 @@
 {
-    "version": 2.0,
-    "success": true,
-    "reason": null,
-    "content": {
-        "traffic_flows": [
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "traffic_flows": [
+      {
+        "src": {
+          "ip": "176.9.150.138",
+          "ip_lists": [
             {
-                "src": {
-                    "ip": "198.204.226.234"
-                },
-                "dst": {
-                    "ip": "10.1.100.43",
-                    "workload": {
-                        "href": "/orgs/1/workloads/9c8b69b9-c741-4689-b8c7-f8ebee0dbee8",
-                        "hostname": "windows-jumpbox-1",
-                        "os_type": "windows",
-                        "labels": [
-                            {
-                                "href": "/orgs/1/labels/15415",
-                                "key": "app",
-                                "value": "A-ADMIN"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15411",
-                                "key": "env",
-                                "value": "E-PROD"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15412",
-                                "key": "loc",
-                                "value": "L-DALLAS"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15416",
-                                "key": "role",
-                                "value": "R-JUMP-SRV"
-                            }
-                        ]
-                    }
-                },
-                "service": {
-                    "port": 3389,
-                    "proto": 6,
-                    "process_name": "svchost.exe",
-                    "windows_service_name": "TermService",
-                    "user_name": "NETWORK SERVICE"
-                },
-                "num_connections": 1,
-                "state": "active",
-                "timestamp_range": {
-                    "first_detected": "2021-12-29T20:38:13Z",
-                    "last_detected": "2021-12-29T20:38:13Z"
-                },
-                "dst_bi": 0,
-                "dst_bo": 0,
-                "policy_decision": "potentially_blocked",
-                "flow_direction": "inbound"
-            },
-            {
-                "src": {
-                    "ip": "27.124.5.118"
-                },
-                "dst": {
-                    "ip": "10.1.100.43",
-                    "workload": {
-                        "href": "/orgs/1/workloads/9c8b69b9-c741-4689-b8c7-f8ebee0dbee8",
-                        "hostname": "windows-jumpbox-1",
-                        "os_type": "windows",
-                        "labels": [
-                            {
-                                "href": "/orgs/1/labels/15415",
-                                "key": "app",
-                                "value": "A-ADMIN"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15411",
-                                "key": "env",
-                                "value": "E-PROD"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15412",
-                                "key": "loc",
-                                "value": "L-DALLAS"
-                            },
-                            {
-                                "href": "/orgs/1/labels/15416",
-                                "key": "role",
-                                "value": "R-JUMP-SRV"
-                            }
-                        ]
-                    }
-                },
-                "service": {
-                    "port": 3389,
-                    "proto": 6,
-                    "process_name": "svchost.exe",
-                    "windows_service_name": "TermService",
-                    "user_name": "NETWORK SERVICE"
-                },
-                "num_connections": 17,
-                "state": "timed out",
-                "timestamp_range": {
-                    "first_detected": "2021-12-25T13:49:29Z",
-                    "last_detected": "2021-12-25T13:49:29Z"
-                },
-                "dst_bi": 0,
-                "dst_bo": 0,
-                "policy_decision": "potentially_blocked",
-                "flow_direction": "inbound"
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
             }
-        ]
-    },
-    "raw": null,
-    "inputs": {
-        "illumio_protocol": "TCP",
-        "illumio_traffic_analysis_policy_decisions": ["potentially_blocked", "unknown"],
-        "illumio_traffic_analysis_end_time": 1640926800000,
-        "illumio_traffic_analysis_start_time": 1640322000000,
-        "illumio_port": 3389
-    },
-    "metrics": {
-        "version": "1.0",
-        "package": "fn-illumio",
-        "package_version": "1.0.0",
-        "host": "C02G82JEMD6R",
-        "execution_time_ms": 8923,
-        "timestamp": "2022-01-07 10:23:10"
-    }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:52Z",
+          "last_detected": "2022-02-03T22:33:52Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "20.107.24.45",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:53Z",
+          "last_detected": "2022-02-03T22:33:53Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "193.56.146.208",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 7,
+        "state": "active",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:34:04Z",
+          "last_detected": "2022-02-03T22:34:04Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "193.56.146.208",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 23,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:34:25Z",
+          "last_detected": "2022-02-03T22:34:25Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "34.222.179.17",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:55Z",
+          "last_detected": "2022-02-03T22:33:55Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "20.112.109.175",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:50Z",
+          "last_detected": "2022-02-03T22:33:50Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "44.242.167.13",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:38Z",
+          "last_detected": "2022-02-03T22:33:38Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      },
+      {
+        "src": {
+          "ip": "185.62.86.88",
+          "ip_lists": [
+            {
+              "href": "/orgs/28/sec_policy/draft/ip_lists/2191",
+              "name": "Internet"
+            }
+          ]
+        },
+        "dst": {
+          "ip": "10.1.100.149",
+          "workload": {
+            "href": "/orgs/28/workloads/7c78ab4b-ced8-43a7-bf1f-5e92f89138bf",
+            "hostname": "windows-jumpbox-1",
+            "os_type": "windows",
+            "labels": [
+              {
+                "href": "/orgs/28/labels/21494",
+                "key": "app",
+                "value": "Administration"
+              },
+              {
+                "href": "/orgs/28/labels/21480",
+                "key": "env",
+                "value": "Production"
+              },
+              {
+                "href": "/orgs/28/labels/21481",
+                "key": "loc",
+                "value": "Dallas"
+              },
+              {
+                "href": "/orgs/28/labels/21495",
+                "key": "role",
+                "value": "Jump Server"
+              }
+            ]
+          }
+        },
+        "service": {
+          "port": 3389,
+          "proto": 6,
+          "process_name": "svchost.exe",
+          "windows_service_name": "TermService",
+          "user_name": "NETWORK SERVICE"
+        },
+        "num_connections": 1,
+        "state": "timed out",
+        "timestamp_range": {
+          "first_detected": "2022-02-03T22:33:55Z",
+          "last_detected": "2022-02-03T22:33:55Z"
+        },
+        "dst_bi": 0,
+        "dst_bo": 0,
+        "policy_decision": "potentially_blocked",
+        "flow_direction": "inbound"
+      }
+    ]
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_protocol": "TCP",
+    "illumio_traffic_analysis_policy_decisions": [
+      "potentially_blocked",
+      "unknown"
+    ],
+    "illumio_traffic_analysis_end_time": 1646715600000,
+    "illumio_traffic_analysis_start_time": 1643691600000,
+    "illumio_port": 3389
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 9114,
+    "timestamp": "2022-03-09 23:58:10"
+  }
 }

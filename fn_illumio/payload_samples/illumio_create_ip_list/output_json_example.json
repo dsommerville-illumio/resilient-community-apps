@@ -1,0 +1,57 @@
+{
+  "version": 2.0,
+  "success": true,
+  "reason": null,
+  "content": {
+    "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+    "name": "IPL-LAB",
+    "description": "",
+    "created_at": "2022-03-10T04:33:50.982Z",
+    "updated_at": "2022-03-10T04:33:50.989Z",
+    "update_type": "create",
+    "created_by": {
+      "href": "/users/520"
+    },
+    "updated_by": {
+      "href": "/users/520"
+    },
+    "ip_ranges": [
+      {
+        "from_ip": "10.2.24.0/28",
+        "exclusion": false
+      },
+      {
+        "from_ip": "10.8.16.192",
+        "to_ip": "10.8.16.212",
+        "exclusion": false
+      },
+      {
+        "from_ip": "10.10.0.146",
+        "exclusion": false
+      }
+    ],
+    "fqdns": [
+      {
+        "fqdn": "ibmsoar.lab.com"
+      },
+      {
+        "fqdn": "apphost.lab.com"
+      }
+    ]
+  },
+  "raw": null,
+  "inputs": {
+    "illumio_ip_list_ip_ranges": "10.2.24.0/28,10.8.16.192-10.8.16.212,10.10.0.146",
+    "illumio_ip_list_name": "IPL-LAB",
+    "illumio_ip_list_description": "",
+    "illumio_ip_list_fqdns": "ibmsoar.lab.com,apphost.lab.com"
+  },
+  "metrics": {
+    "version": "1.0",
+    "package": "fn-illumio",
+    "package_version": "1.1.0",
+    "host": "C02G82JEMD6R",
+    "execution_time_ms": 812,
+    "timestamp": "2022-03-09 23:33:50"
+  }
+}
