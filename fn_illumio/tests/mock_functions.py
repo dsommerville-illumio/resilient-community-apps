@@ -1,3 +1,4 @@
+from ipaddress import IPv4Address, IPv4Network
 from typing import List
 
 from illumio.explorer import TrafficQuery, TrafficFlow
@@ -187,6 +188,8 @@ def mock_results(op):
             "enabled": True,
             "description": "",
             "scopes": [[]],
+            "rules": [],
+            "ip_tables_rules": [],
             "caps": [
                 "write",
                 "provision"
@@ -354,6 +357,7 @@ def mock_results(op):
                         "proto": 6
                     }
                 ],
+                "service_addresses": [],
                 "labels": [],
                 "ip_overrides": [],
                 "apply_to": "host_only",
@@ -361,8 +365,7 @@ def mock_results(op):
                     "write",
                     "provision",
                     "delete"
-                ],
-                "service_addresses": []
+                ]
             }
         ],
         'create_virtual_service': {
@@ -399,6 +402,8 @@ def mock_results(op):
                     "proto": 6
                 }
             ],
+            "service_addresses": [],
+            "labels": [],
             "ip_overrides": [],
             "apply_to": "host_only",
             "caps": [
@@ -456,9 +461,133 @@ def mock_results(op):
                     }
                 ],
                 "fqdns": []
+            },
+            {
+                "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+                "name": "IPL-LAB",
+                "description": "",
+                "created_at": "2022-03-10T04:33:50.982Z",
+                "updated_at": "2022-03-10T04:33:50.989Z",
+                "update_type": "create",
+                "created_by": {
+                    "href": "/users/520"
+                },
+                "updated_by": {
+                    "href": "/users/520"
+                },
+                "ip_ranges": [
+                    {
+                        "from_ip": "10.2.24.0/28",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.8.16.192",
+                        "to_ip": "10.8.16.212",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.10.0.146",
+                        "exclusion": False
+                    }
+                ],
+                "fqdns": [
+                    {
+                        "fqdn": "ibmsoar.lab.com"
+                    },
+                    {
+                        "fqdn": "apphost.lab.com"
+                    }
+                ]
             }
         ],
+        'create_ip_list': {
+            "href": "/orgs/28/sec_policy/draft/ip_lists/12345",
+            "name": "IPL-IBM-SOAR",
+            "description": "",
+            "created_at": "2022-03-10T04:33:50.982Z",
+            "updated_at": "2022-03-10T04:33:50.989Z",
+            "update_type": "create",
+            "created_by": {
+                "href": "/users/520"
+            },
+            "updated_by": {
+                "href": "/users/520"
+            },
+            "ip_ranges": [
+                {
+                    "from_ip": "127.0.0.1",
+                    "exclusion": False
+                }
+            ],
+            "fqdns": [
+                {
+                    "fqdn": "localhost"
+                }
+            ]
+        },
         'ip_list_existing': {
+            "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+            "name": "IPL-LAB",
+            "description": "",
+            "created_at": "2022-03-10T04:33:50.982Z",
+            "updated_at": "2022-03-10T04:33:50.989Z",
+            "update_type": "create",
+            "created_by": {
+                "href": "/users/520"
+            },
+            "updated_by": {
+                "href": "/users/520"
+            },
+            "ip_ranges": [
+                {
+                    "from_ip": "10.2.24.0/28",
+                    "exclusion": False
+                },
+                {
+                    "from_ip": "10.8.16.192",
+                    "to_ip": "10.8.16.212",
+                    "exclusion": False
+                },
+                {
+                    "from_ip": "10.10.0.146",
+                    "exclusion": False
+                }
+            ],
+            "fqdns": [
+                {
+                    "fqdn": "ibmsoar.lab.com"
+                },
+                {
+                    "fqdn": "apphost.lab.com"
+                }
+            ]
+        },
+        'ip_list_created': {
+            "href": "/orgs/28/sec_policy/draft/ip_lists/12345",
+            "name": "IPL-IBM-SOAR",
+            "description": "",
+            "created_at": "2022-03-10T04:33:50.982Z",
+            "updated_at": "2022-03-10T04:33:50.989Z",
+            "update_type": "create",
+            "created_by": {
+                "href": "/users/520"
+            },
+            "updated_by": {
+                "href": "/users/520"
+            },
+            "ip_ranges": [
+                {
+                    "from_ip": "127.0.0.1",
+                    "exclusion": False
+                }
+            ],
+            "fqdns": [
+                {
+                    "fqdn": "localhost"
+                }
+            ]
+        },
+        'ip_list_matching_by_href': {
             "href": "/orgs/1/sec_policy/active/ip_lists/1",
             "created_at": "2021-12-07T22:28:09.136Z",
             "updated_at": "2021-12-07T22:28:09.136Z",
@@ -478,8 +607,135 @@ def mock_results(op):
                     "from_ip": "::/0",
                     "exclusion": False
                 }
-            ]
+            ],
+            "fqdns": []
         },
+        'ip_lists_matching_by_name': [
+            {
+                "href": "/orgs/1/sec_policy/active/ip_lists/1",
+                "created_at": "2021-12-07T22:28:09.136Z",
+                "updated_at": "2021-12-07T22:28:09.136Z",
+                "created_by": {
+                    "href": "/users/0"
+                },
+                "updated_by": {
+                    "href": "/users/0"
+                },
+                "name": "Any (0.0.0.0/0 and ::/0)",
+                "ip_ranges": [
+                    {
+                        "from_ip": "0.0.0.0/0",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "::/0",
+                        "exclusion": False
+                    }
+                ],
+                "fqdns": []
+            }
+        ],
+        'ip_lists_matching_by_ip_address': [
+            {
+                "href": "/orgs/1/sec_policy/active/ip_lists/1",
+                "created_at": "2021-12-07T22:28:09.136Z",
+                "updated_at": "2021-12-07T22:28:09.136Z",
+                "created_by": {
+                    "href": "/users/0"
+                },
+                "updated_by": {
+                    "href": "/users/0"
+                },
+                "name": "Any (0.0.0.0/0 and ::/0)",
+                "ip_ranges": [
+                    {
+                        "from_ip": "0.0.0.0/0",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "::/0",
+                        "exclusion": False
+                    }
+                ],
+                "fqdns": []
+            },
+            {
+                "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+                "name": "IPL-LAB",
+                "description": "",
+                "created_at": "2022-03-10T04:33:50.982Z",
+                "updated_at": "2022-03-10T04:33:50.989Z",
+                "update_type": "create",
+                "created_by": {
+                    "href": "/users/520"
+                },
+                "updated_by": {
+                    "href": "/users/520"
+                },
+                "ip_ranges": [
+                    {
+                        "from_ip": "10.2.24.0/28",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.8.16.192",
+                        "to_ip": "10.8.16.212",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.10.0.146",
+                        "exclusion": False
+                    }
+                ],
+                "fqdns": [
+                    {
+                        "fqdn": "ibmsoar.lab.com"
+                    },
+                    {
+                        "fqdn": "apphost.lab.com"
+                    }
+                ]
+            }
+        ],
+        'ip_lists_matching_by_fqdn': [
+            {
+                "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+                "name": "IPL-LAB",
+                "description": "",
+                "created_at": "2022-03-10T04:33:50.982Z",
+                "updated_at": "2022-03-10T04:33:50.989Z",
+                "update_type": "create",
+                "created_by": {
+                    "href": "/users/520"
+                },
+                "updated_by": {
+                    "href": "/users/520"
+                },
+                "ip_ranges": [
+                    {
+                        "from_ip": "10.2.24.0/28",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.8.16.192",
+                        "to_ip": "10.8.16.212",
+                        "exclusion": False
+                    },
+                    {
+                        "from_ip": "10.10.0.146",
+                        "exclusion": False
+                    }
+                ],
+                "fqdns": [
+                    {
+                        "fqdn": "ibmsoar.lab.com"
+                    },
+                    {
+                        "fqdn": "apphost.lab.com"
+                    }
+                ]
+            }
+        ],
         'list_workloads': [
             {
                 "href": "/orgs/1/workloads/de5c75c5-b293-4dbd-a6c0-124b8a43a589",
@@ -831,6 +1087,7 @@ def mock_results(op):
                     "default_gateway_address": "10.0.0.1"
                 }
             ],
+            "labels": [],
             "ignored_interface_names": [],
             "os_id": "ubuntu-x86_64-xenial",
             "os_detail": "4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 (Ubuntu 16.04.1 LTS)",
@@ -891,6 +1148,7 @@ def mock_results(op):
                     "firewall_rule_count": 0,
                     "status": "active",
                     "agent_version": "20.2.0",
+                    "agent_health": [],
                     "agent_health_errors": {
                         "errors": [],
                         "warnings": []
@@ -948,6 +1206,7 @@ def mock_results(op):
                         "default_gateway_address": "10.0.0.1"
                     }
                 ],
+                "labels": [],
                 "ignored_interface_names": [],
                 "os_id": "ubuntu-x86_64-xenial",
                 "os_detail": "4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 (Ubuntu 16.04.1 LTS)",
@@ -1029,6 +1288,7 @@ def mock_results(op):
                         "firewall_rule_count": 0,
                         "status": "active",
                         "agent_version": "20.2.0",
+                        "agent_health": [],
                         "agent_health_errors": {
                             "errors": [],
                             "warnings": []
@@ -1085,6 +1345,7 @@ def mock_results(op):
                         "default_gateway_address": "10.0.0.1"
                     }
                 ],
+                "labels": [],
                 "ignored_interface_names": [],
                 "os_id": "ubuntu-x86_64-xenial",
                 "os_detail": "4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 (Ubuntu 16.04.1 LTS)",
@@ -1145,6 +1406,7 @@ def mock_results(op):
                         "firewall_rule_count": 0,
                         "status": "active",
                         "agent_version": "20.2.0",
+                        "agent_health": [],
                         "agent_health_errors": {
                             "errors": [],
                             "warnings": []
@@ -1400,14 +1662,15 @@ def mocked_policy_compute_engine(*args, **kwargs):
         def _find_matching_objects(self, params: dict, mock):
             objects = []
             for o in mock:
-                matches = True
+                matches = False
                 for k, v in params.items():
-                    if isinstance(o[k], str):
-                        # support partial matches for string values
-                        if o[k] not in v:
-                            matches = False
-                    elif o[k] != v:
-                        matches = False
+                    if k in o:
+                        if type(o[k]) is str:
+                            # support partial matches for string values
+                            if v in o[k]:
+                                matches = True
+                        elif o[k] == v:
+                            matches = True
                 if matches:
                     objects.append(o)
             return objects
@@ -1497,11 +1760,43 @@ def mocked_policy_compute_engine(*args, **kwargs):
             return IPList.from_json(matching_results[0] if matching_results else {})
 
         def get_ip_lists(self, params: dict, *args, **kwargs):
+            ip_lists = mock_results('list_ip_lists')
             matching_results = self._find_matching_objects(
                 params=params,
-                mock=mock_results('list_ip_lists')
+                mock=ip_lists
             )
+
+            for ip_list in ip_lists:
+                if 'ip_address' in params:
+                    if self._check_ip_list_match(params['ip_address'], ip_list):
+                        matching_results.append(ip_list)
+
+                if 'fqdn' in params:
+                    for fqdn_record in ip_list['fqdns']:
+                        if params['fqdn'] in fqdn_record['fqdn']:
+                            matching_results.append(ip_list)
+                            break
+
             return [IPList.from_json(o) for o in matching_results]
+
+        def _check_ip_list_match(self, address, ip_list):
+            for ip_range_record in ip_list['ip_ranges']:
+                from_ip = self._parse_ip(ip_range_record['from_ip'])
+                to_ip = self._parse_ip(ip_range_record['to_ip']) if 'to_ip' in ip_range_record else None
+                return self._compare_ip(from_ip, to_ip, address)
+
+        def _parse_ip(self, address):
+            if not address:
+                return None
+            return IPv4Network(address) if '/' in address else IPv4Address(address)
+
+        def _compare_ip(self, from_ip, to_ip, address):
+            address = IPv4Address(address)
+            if type(from_ip) is IPv4Network:
+                return address in from_ip
+            if to_ip:
+                return address >= from_ip and address <= to_ip
+            return IPv4Address(address) == from_ip
 
         def get_ip_lists_by_name(self, name: str, *args, **kwargs):
             matching_results = self._find_matching_objects(
@@ -1540,7 +1835,10 @@ def mocked_policy_compute_engine(*args, **kwargs):
             errors = []
             matching_results = []
             for workload in workloads:
-                matching_workloads = self._find_matching_workloads({'href': workload.href})
+                matching_workloads = self._find_matching_objects(
+                    params={'href': workload.href},
+                    mock=mock_results('list_workloads')
+                )
                 if matching_workloads:
                     matching_results.append(workload)
                 else:
