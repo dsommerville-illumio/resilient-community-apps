@@ -7,6 +7,7 @@ from resilient_lib import IntegrationError
 
 from illumio.exceptions import IllumioException
 from illumio.rules import Rule
+from illumio.util import ACTIVE, DRAFT
 
 from fn_illumio.util.helper import IllumioHelper
 
@@ -34,6 +35,8 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        rule = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
@@ -44,20 +47,23 @@ class FunctionComponent(AppFunctionComponent):
             resolve_consumers_as = self._to_list(fn_inputs.illumio_rule_resolve_consumers_as)
             resolve_providers_as = self._to_list(fn_inputs.illumio_rule_resolve_providers_as)
 
-            yield self.status_message("Creating rule in ruleset '{}'".format(fn_inputs.illumio_ruleset_href))
+            ruleset_href = fn_inputs.illumio_ruleset_href
+
+            yield self.status_message("Creating rule in ruleset '{}'".format(ruleset_href))
             rule = Rule.build(
                 enabled=True, ingress_services=[],
                 consumers=consumers, providers=providers,
                 resolve_consumers_as=resolve_consumers_as,
                 resolve_providers_as=resolve_providers_as
             )
-            yield self.status_message(str(rule.to_json()))
-            rule = pce.create_rule(ruleset_href=fn_inputs.illumio_ruleset_href, rule=rule)
+            rule = pce.create_rule(ruleset_href=ruleset_href, rule=rule)
             yield self.status_message("Created rule with HREF '{}'".format(rule.href))
+
+            rule = rule.to_json()
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating rule: {}".format(str(e)))
 
-        yield FunctionResult(rule.to_json())
+        yield FunctionResult(rule)
 
     def _to_list(self, param):
         if isinstance(param, list):

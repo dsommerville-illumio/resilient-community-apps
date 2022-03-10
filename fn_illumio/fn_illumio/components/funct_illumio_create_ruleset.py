@@ -32,25 +32,29 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        ruleset = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
             ruleset_name = getattr(fn_inputs, "illumio_ruleset_name", DEFAULT_RULESET_NAME)
 
-            found_existing_ruleset = False
             matching_rulesets = pce.get_rulesets(params={'name': ruleset_name})
 
-            for ruleset in matching_rulesets:
-                if ruleset.name == ruleset_name:
-                    found_existing_ruleset = True
+            for ruleset_match in matching_rulesets:
+                if ruleset_match.name == ruleset_name:
+                    ruleset = ruleset_match
                     yield self.status_message("Found existing ruleset with name '{}'".format(ruleset_name))
+                    break
 
-            if not found_existing_ruleset:
+            if not ruleset:
                 yield self.status_message("No existing ruleset with name '{}', creating...".format(ruleset_name))
                 ruleset = pce.create_ruleset(ruleset=Ruleset(name=ruleset_name))
                 yield self.status_message("Created ruleset with HREF '{}'".format(ruleset.href))
+
+            ruleset = ruleset.to_json()
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating ruleset: {}".format(str(e)))
 
-        yield FunctionResult(ruleset.to_json())
+        yield FunctionResult(ruleset)

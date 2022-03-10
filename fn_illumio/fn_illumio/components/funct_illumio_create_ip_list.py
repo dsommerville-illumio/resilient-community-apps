@@ -35,6 +35,8 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        ip_list = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
@@ -44,15 +46,15 @@ class FunctionComponent(AppFunctionComponent):
             ip_ranges = self._parse_ip_ranges(fn_inputs.illumio_ip_list_ip_ranges)
             fqdns = self._parse_fqdns(fn_inputs.illumio_ip_list_fqdns)
 
-            found_existing_ip_list = False
             matching_ip_lists = pce.get_ip_lists(params={'name': ip_list_name})
 
-            for ip_list in matching_ip_lists:
-                if ip_list.name == ip_list_name:
-                    found_existing_ip_list = True
+            for ip_list_match in matching_ip_lists:
+                if ip_list_match.name == ip_list_name:
+                    ip_list = ip_list_match
                     yield self.status_message("Found existing IP list with name '{}'".format(ip_list_name))
+                    break
 
-            if not found_existing_ip_list:
+            if not ip_list:
                 yield self.status_message("No existing IP list with name '{}', creating...".format(ip_list_name))
                 ip_list = IPList(
                     name=ip_list_name,
@@ -62,10 +64,12 @@ class FunctionComponent(AppFunctionComponent):
                 )
                 ip_list = pce.create_ip_list(ip_list)
                 yield self.status_message("Created IP list with HREF '{}'".format(ip_list.href))
+
+            ip_list = ip_list.to_json()
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating IP list: {}".format(str(e)))
 
-        yield FunctionResult(ip_list.to_json())
+        yield FunctionResult(ip_list)
 
     def _parse_ip_ranges(self, ip_range_string: str) -> List[IPRange]:
         ip_ranges = [ip_range.strip() for ip_range in ip_range_string.split(',')]

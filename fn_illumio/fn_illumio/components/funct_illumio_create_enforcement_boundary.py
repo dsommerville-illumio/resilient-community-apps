@@ -37,6 +37,8 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        enforcement_boundary = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
@@ -47,15 +49,15 @@ class FunctionComponent(AppFunctionComponent):
             port = fn_inputs.illumio_port
             protocol = convert_protocol(fn_inputs.illumio_protocol)
 
-            found_existing_enforcement_boundary = False
             matching_enforcement_boundaries = pce.get_enforcement_boundaries(params={'name': enforcement_boundary_name})
 
-            for enforcement_boundary in matching_enforcement_boundaries:
-                if enforcement_boundary.name == enforcement_boundary_name:
-                    found_existing_enforcement_boundary = True
+            for enforcement_boundary_match in matching_enforcement_boundaries:
+                if enforcement_boundary_match.name == enforcement_boundary_name:
+                    enforcement_boundary = enforcement_boundary_match
                     yield self.status_message("Found existing enforcement boundary with name '{}'".format(enforcement_boundary_name))
+                    break
 
-            if not found_existing_enforcement_boundary:
+            if not enforcement_boundary:
                 yield self.status_message("No existing enforcement boundary with name '{}', creating...".format(enforcement_boundary_name))
                 enforcement_boundary = EnforcementBoundary.build(
                     name=enforcement_boundary_name,
@@ -65,6 +67,8 @@ class FunctionComponent(AppFunctionComponent):
                 )
                 enforcement_boundary = pce.create_enforcement_boundary(enforcement_boundary=enforcement_boundary)
                 yield self.status_message("Created enforcement_boundary with HREF '{}'".format(enforcement_boundary.href))
+
+            enforcement_boundary = enforcement_boundary.to_json()
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating enforcement boundary: {}".format(str(e)))
-        yield FunctionResult(enforcement_boundary.to_json())
+        yield FunctionResult(enforcement_boundary)

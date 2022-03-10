@@ -34,6 +34,8 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        results = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
@@ -60,7 +62,6 @@ class FunctionComponent(AppFunctionComponent):
                 results = json.loads(json.dumps(results, cls=IllumioEncoder))  # convert the ServiceBinding objects
             else:
                 yield self.status_message("No workloads passed to create service binding")
-                results = {}
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating service bindings: {}".format(str(e)))
 

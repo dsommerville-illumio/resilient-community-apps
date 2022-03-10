@@ -35,21 +35,23 @@ class FunctionComponent(AppFunctionComponent):
 
         yield self.status_message("Starting '{}' function".format(FN_NAME))
 
+        virtual_service = {}
+
         try:
             illumio_helper = IllumioHelper(self.options)
             pce = illumio_helper.get_pce_instance()
 
             virtual_service_name = getattr(fn_inputs, "illumio_virtual_service_name", DEFAULT_VIRTUAL_SERVICE_NAME)
 
-            found_existing_virtual_service = False
             matching_virtual_services = pce.get_virtual_services(params={'name': virtual_service_name})
 
-            for virtual_service in matching_virtual_services:
-                if virtual_service.name == virtual_service_name:
-                    found_existing_virtual_service = True
+            for virtual_service_match in matching_virtual_services:
+                if virtual_service_match.name == virtual_service_name:
+                    virtual_service = virtual_service_match
                     yield self.status_message("Found existing virtual service with name '{}'".format(virtual_service_name))
+                    break
 
-            if not found_existing_virtual_service:
+            if not virtual_service:
                 yield self.status_message("No existing virtual service with name '{}', creating...".format(virtual_service_name))
                 virtual_service = VirtualService(
                     name=virtual_service_name,
@@ -62,7 +64,9 @@ class FunctionComponent(AppFunctionComponent):
                 )
                 virtual_service = pce.create_virtual_service(virtual_service)
                 yield self.status_message("Created virtual service with HREF '{}'".format(virtual_service.href))
+
+            virtual_service = virtual_service.to_json()
         except IllumioException as e:
             raise IntegrationError("Encountered an error while creating virtual service: {}".format(str(e)))
 
-        yield FunctionResult(virtual_service.to_json())
+        yield FunctionResult(virtual_service)
