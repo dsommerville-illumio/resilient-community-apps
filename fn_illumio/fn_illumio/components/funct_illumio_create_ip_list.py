@@ -50,8 +50,8 @@ class FunctionComponent(AppFunctionComponent):
             if not ip_ranges and not fqdns:
                 raise IntegrationError("One or more FQDN or IP range entries must be provided when creating an IP list.")
 
-            ip_ranges = self._parse_ip_ranges(fn_inputs.illumio_ip_list_ip_ranges)
-            fqdns = self._parse_fqdns(fn_inputs.illumio_ip_list_fqdns)
+            ip_ranges = self._parse_ip_ranges(ip_ranges)
+            fqdns = self._parse_fqdns(fqdns)
 
             matching_ip_lists = pce.get_ip_lists(params={'name': ip_list_name})
 
