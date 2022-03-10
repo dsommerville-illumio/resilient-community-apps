@@ -42,7 +42,14 @@ class FunctionComponent(AppFunctionComponent):
             pce = illumio_helper.get_pce_instance()
 
             ip_list_name = getattr(fn_inputs, "illumio_ip_list_name", DEFAULT_IP_LIST_NAME)
-            ip_list_description = fn_inputs.illumio_ip_list_description
+            ip_list_description = getattr(fn_inputs, "illumio_ip_list_description", "")
+            ip_ranges = getattr(fn_inputs, "illumio_ip_list_ip_ranges", "")
+            fqdns = getattr(fn_inputs, "illumio_ip_list_fqdns", "")
+
+            # if both fields are left blank, raise an error
+            if not ip_ranges and not fqdns:
+                raise IntegrationError("One or more FQDN or IP range entries must be provided when creating an IP list.")
+
             ip_ranges = self._parse_ip_ranges(fn_inputs.illumio_ip_list_ip_ranges)
             fqdns = self._parse_fqdns(fn_inputs.illumio_ip_list_fqdns)
 
