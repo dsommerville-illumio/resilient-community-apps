@@ -8,7 +8,9 @@
 - [Function - Illumio: Create Service Binding](#function---illumio-create-service-binding)
 - [Function - Illumio: Create Ruleset](#function---illumio-create-ruleset)
 - [Function - Illumio: Create Rule](#function---illumio-create-rule)
+- [Function - Illumio: Create IP List](#function---illumio-create-ip-list)
 - [Function - Illumio: Get IP List](#function---illumio-get-ip-list)
+- [Function - Illumio: Get IP Lists](#function---illumio-get-ip-lists)
 - [Function - Illumio: Get Workload](#function---illumio-get-workload)
 - [Function - Illumio: Get Workloads](#function---illumio-get-workloads)
 - [Function - Illumio: Run Traffic Analysis](#function---illumio-run-traffic-analysis)
@@ -32,12 +34,15 @@ You can find additional documentation for your version of Illumio Core through t
 The following functions are currently implemented:  
 
 * Create an Enforcement Boundary
+* Create an IP List
 * Create a Rule Set
     * Create a Rule
 * Create a Virtual Service
     * Bind Workloads to a Virtual Service
-* Get an IP List by name
-* Get one or more Workloads
+* Get a collection of IP Lists
+* Get an IP List by HREF
+* Get a collection of Workloads
+* Get a Workload by HREF
 * Provision policy objects
 * Run a traffic analysis query
 * Update the enforcement modes of one or more Workloads
@@ -537,8 +542,114 @@ None
 
 ---
 
+## Function - Illumio: Create IP List  
+Create an IP List object.  
+
+ ![screenshot: fn-illumio-create-ip-list ](./screenshots/fn-illumio-create-ip-list.png)
+
+<details><summary>Inputs:</summary>
+<p>
+
+| Name | Type | Required | Example | Tooltip |
+| ---- | :--: | :------: | ------- | ------- |
+| `illumio_ip_list_name` | `text` | No | `IPL-IBM-SOAR` | IP List name. Defaults to IPL-IBM-SOAR |
+| `illumio_ip_list_description` | `text` | No | `IP list created through IBM SOAR.` | IP List description. |
+| `illumio_ip_list_fqdns` | `text` | No | `example1.com,example2.com` | Comma-separated list of FQDNs to add to the created IP list. Note that either FQDNs or IP ranges must be provided for valid IP list creation. |
+| `illumio_ip_list_ip_ranges` | `text` | No | `127.0.0.1,10.0.0.0/8,172.168.0.2-172.168.0.12` | Comma-separated list of IP addresses or ranges to include in the created IP list. The values can be single IPs, CIDR format, or hyphenated start-end ranges. Note that either IP ranges or FQDNs must be provided for valid IP list creation. |
+
+</p>
+</details>
+
+<details><summary>Outputs:</summary>
+<p>
+
+```python
+results = {
+    "version": 2.0,
+    "success": true,
+    "reason": null,
+    "content": {
+        "href": "/orgs/28/sec_policy/draft/ip_lists/2335",
+        "name": "IPL-LAB",
+        "description": "",
+        "created_at": "2022-03-10T04:33:50.982Z",
+        "updated_at": "2022-03-10T04:33:50.989Z",
+        "update_type": "create",
+        "created_by": {
+            "href": "/users/520"
+        },
+        "updated_by": {
+            "href": "/users/520"
+        },
+        "ip_ranges": [
+            {
+                "from_ip": "10.2.24.0/28",
+                "exclusion": false
+            },
+            {
+                "from_ip": "10.8.16.192",
+                "to_ip": "10.8.16.212",
+                "exclusion": false
+            },
+            {
+                "from_ip": "10.10.0.146",
+                "exclusion": false
+            }
+        ],
+        "fqdns": [
+            {
+                "fqdn": "ibmsoar.lab.com"
+            },
+            {
+                "fqdn": "apphost.lab.com"
+            }
+        ]
+    },
+    "raw": null,
+    "inputs": {
+        "illumio_ip_list_ip_ranges": "10.2.24.0/28,10.8.16.192-10.8.16.212,10.10.0.146",
+        "illumio_ip_list_name": "IPL-LAB",
+        "illumio_ip_list_description": "",
+        "illumio_ip_list_fqdns": "ibmsoar.lab.com,apphost.lab.com"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.1.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 812,
+        "timestamp": "2022-03-09 23:33:50"
+    }
+}
+```
+
+</p>
+</details>
+
+<details><summary>Example Pre-Process Script:</summary>
+<p>
+
+```python
+None
+```
+
+</p>
+</details>
+
+<details><summary>Example Post-Process Script:</summary>
+<p>
+
+```python
+None
+```
+
+</p>
+</details>
+
+---
+
 ## Function - Illumio: Get IP List  
-Get an IP List object by name.  
+Get an IP List object by HREF.  
 
  ![screenshot: fn-illumio-get-ip-list ](./screenshots/fn-illumio-get-ip-list.png)
 
@@ -547,7 +658,7 @@ Get an IP List object by name.
 
 | Name | Type | Required | Example | Tooltip |
 | ---- | :--: | :------: | ------- | ------- |
-| `illumio_ip_list_name` | `text` | Yes | `Any (0.0.0.0/0 and ::/0)` | IP List object name. Accepts partial matches |
+| `illumio_ip_list_href` | `text` | Yes | `/orgs/1/sec_policy/active/ip_lists/1` | IP List object reference key. |
 
 </p>
 </details>
@@ -561,7 +672,7 @@ results = {
     "success": True,
     "reason": None,
     "content": {
-        "href": "/orgs/1/sec_policy/active/ip_lists/1334",
+        "href": "/orgs/1/sec_policy/active/ip_lists/1",
         "name": "Any (0.0.0.0/0 and ::/0)",
         "created_at": "2021-09-13T15:03:07.000Z",
         "updated_at": "2021-09-13T15:03:07.015Z",
@@ -570,6 +681,88 @@ results = {
         "ip_ranges": [
             {"from_ip": "0.0.0.0/0", "exclusion": False},
             {"from_ip": "::/0", "exclusion": False}
+        ]
+    },
+    "raw": None,
+    "inputs": {
+        "illumio_ip_list_name": "Any (0.0.0.0/0 and ::/0)"
+    },
+    "metrics": {
+        "version": "1.0",
+        "package": "fn-illumio",
+        "package_version": "1.0.0",
+        "host": "C02G82JEMD6R",
+        "execution_time_ms": 811,
+        "timestamp": "2022-01-07 10:22:52"
+    }
+}
+```
+
+</p>
+</details>
+
+<details><summary>Example Pre-Process Script:</summary>
+<p>
+
+```python
+None
+```
+
+</p>
+</details>
+
+<details><summary>Example Post-Process Script:</summary>
+<p>
+
+```python
+None
+```
+
+</p>
+</details>
+
+---
+
+## Function - Illumio: Get IP Lists  
+Get a collection of IP lists based on the provided parameters.  
+
+ ![screenshot: fn-illumio-get-ip-lists ](./screenshots/fn-illumio-get-ip-lists.png)
+
+<details><summary>Inputs:</summary>
+<p>
+
+| Name | Type | Required | Example | Tooltip |
+| ---- | :--: | :------: | ------- | ------- |
+| `illumio_ip_list_name` | `text` | No | `Any (0.0.0.0/0 and ::/0)` | IP List object name. Supports partial matches. |
+| `illumio_ip_list_fqdn` | `text` | No | `www.example.com` | IP list FQDN. Supports partial matches. |
+| `illumio_ip_list_ip_address` | `text` | No | `127.0.0.1` | Search for IP lists matching the given address. Supports partial matches. |
+| `illumio_max_results` | `number` | No | `500` | Limit the maximum number of results returned by the query. |
+
+</p>
+</details>
+
+<details><summary>Outputs:</summary>
+<p>
+
+```python
+results = {
+    "version": 2.0,
+    "success": True,
+    "reason": None,
+    "content": {
+        "ip_lists": [
+            {
+                "href": "/orgs/1/sec_policy/active/ip_lists/1",
+                "name": "Any (0.0.0.0/0 and ::/0)",
+                "created_at": "2021-09-13T15:03:07.000Z",
+                "updated_at": "2021-09-13T15:03:07.015Z",
+                "created_by": {"href": "/users/0"},
+                "updated_by": {"href": "/users/0"},
+                "ip_ranges": [
+                    {"from_ip": "0.0.0.0/0", "exclusion": False},
+                    {"from_ip": "::/0", "exclusion": False}
+                ]
+            }
         ]
     },
     "raw": None,
@@ -799,6 +992,7 @@ Get multiple workloads based on the given search criteria.
 | `illumio_workload_managed` | `boolean` | No | `-` | If set, returns only managed workloads if true, or unmanaged workloads if false. |
 | `illumio_workload_name` | `text` | No | `-` | The name of the workload(s) to search for. Supports partial matches. |
 | `illumio_workload_online` | `boolean` | No | `-` | If set, returns only online workloads if true or offline workloads if false. |
+| `illumio_max_results` | `number` | No | `500` | Limit the maximum number of results returned by the query. |
 
 </p>
 </details>
